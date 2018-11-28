@@ -1,0 +1,630 @@
+<html><h2 id="crossreference" class="list">Cross reference for Ontology for Managing Geometry (OMG) classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Ontology for Managing Geometry (OMG).
+<div id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#CurrentGeometryState" title="http://w3id.org/omg#CurrentGeometryState">Current geometry state</a>
+      </li>
+      <li>
+         <a href="#Geometry" title="http://w3id.org/omg#Geometry">Geometry</a>
+      </li>
+      <li>
+         <a href="#Context" title="http://w3id.org/omg#Context">Geometry Context</a>
+      </li>
+      <li>
+         <a href="#GeometryDescription" title="http://w3id.org/omg#GeometryDescription">Geometry description</a>
+      </li>
+      <li>
+         <a href="#GeometryState" title="http://w3id.org/omg#GeometryState">Geometry state</a>
+      </li>
+   </ul>
+   <div class="entity" id="CurrentGeometryState">
+      <h3>Current geometry state<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/omg#CurrentGeometryState</p>
+      <div class="comment">
+         <span class="markdown">A current geometry state classifies the most current - and thereby valid - geometry state. Which state is most current will be defined by the added timestamp using the prov:generatedAtTime relation.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#GeometryState" title="http://w3id.org/omg#GeometryState">Geometry state</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Geometry">
+      <h3>Geometry<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/omg#Geometry</p>
+      <div class="comment">
+         <span class="markdown">Abstract node for geometry that should not contain geometry descriptions (neither RDF-based or text-based). This node can be used to attach additional information to the information as author, time of creation, geometry context or dependencies with other geometry descriptions as transformations, complementations or derivations. By creating subclasses of this class for specific types of geometry descriptions (e.g. OBJ, GEOM, glTF), more informational value can be added and used in querying for specific geometry description formats.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">thing</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#complementsGeometry" title="http://w3id.org/omg#complementsGeometry">complements geometry</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasGeometryState" title="http://w3id.org/omg#hasGeometryState">has geometry state</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isDerivedFromGeometry" title="http://w3id.org/omg#isDerivedFromGeometry">is derived from geometry</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#transformsGeometry" title="http://w3id.org/omg#transformsGeometry">transforms geometry</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+		 <dt>is in domainIncludes of</dt>
+         <dd>
+            <a href="#hasContext" title="http://w3id.org/omg#hasContext">has geometry context</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasGeometryDescription" title="http://w3id.org/omg#hasGeometryDescription">has geometry description</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasSimpleGeometry" title="http://w3id.org/omg#hasSimpleGeometry">has simple geoemtry</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#complementsGeometry" title="http://w3id.org/omg#complementsGeometry">complements geometry</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasGeometry" title="http://w3id.org/omg#hasGeometry">has geometry</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isDerivedFromGeometry" title="http://w3id.org/omg#isDerivedFromGeometry">is derived from geometry</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isImplicitlyDerivedFrom" title="http://w3id.org/omg#isImplicitlyDerivedFrom">is implicitly derived from</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#transformsGeometry" title="http://w3id.org/omg#transformsGeometry">transforms geometry</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Context" title="http://w3id.org/omg#Context">Geometry Context</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#GeometryDescription" title="http://w3id.org/omg#GeometryDescription">Geometry description</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#GeometryState" title="http://w3id.org/omg#GeometryState">Geometry state</a>
+            <sup class="type-c" title="class">c</sup>, <span class="dotted" title="http://www.w3.org/2002/07/owl#NamedIndividual">named individual</span>
+            <sup class="type-c" title="class">c</sup>, <span class="dotted" title="https://w3id.org/opm#Property">property</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Context">
+      <h3>Geometry Context<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/omg#Context</p>
+      <div class="comment">
+         <span class="markdown">Context of one (or multiple) geometry descriptions. A context can help extracting relevant geometry descriptions by connecting those to a specific shared context. Geometric contexts can be views of planners, planning stages (versions), or individually created contexts.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">thing</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasContext" title="http://w3id.org/omg#hasContext">has geometry context</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Geometry" title="http://w3id.org/omg#Geometry">Geometry</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#GeometryDescription" title="http://w3id.org/omg#GeometryDescription">Geometry description</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#GeometryState" title="http://w3id.org/omg#GeometryState">Geometry state</a>
+            <sup class="type-c" title="class">c</sup>, <span class="dotted" title="http://www.w3.org/2002/07/owl#NamedIndividual">named individual</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="GeometryDescription">
+      <h3>Geometry description<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/omg#GeometryDescription</p>
+      <div class="comment">
+         <span class="markdown">A Geometry Description is the first node of an RDF-based geometry description.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">thing</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasGeometryDescription" title="http://w3id.org/omg#hasGeometryDescription">has geometry description</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Context" title="http://w3id.org/omg#Context">Geometry Context</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Geometry" title="http://w3id.org/omg#Geometry">Geometry</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#GeometryState" title="http://w3id.org/omg#GeometryState">Geometry state</a>
+            <sup class="type-c" title="class">c</sup>, <span class="dotted" title="http://www.w3.org/2002/07/owl#NamedIndividual">named individual</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="GeometryState">
+      <h3>Geometry state<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/omg#GeometryState</p>
+      <div class="comment">
+         <span class="markdown">A geometry state is an evaluation holding the geometry description and metadata about a geometry that was true for the given time. 
+In case of geometry states, changing geometric properties does not cause the need for a new geometry state as long as the property was changed using the OPM concepts. If this is not the case, a copy of the now valid graph must be created and attached to a new geometry state. If an object within the geometry graph is changed (e.g. changing the primitive "Box" into a primitive "Sphere"), the old primitive ("Box") should be classified as opm:Deleted and the new primitive ("Sphere") should be added to the geometry graph in the correct place. The new geometry state should then be connected to any object of the geometry graph that is not opm:Deleted using the omg:containsGeometryObject relation.
+Metadata of a geometry state must as a minimum be the time of generation stated by prov:generatedAtTime, but preferably also a prov:wasAttributedTo reference to the agent who created the state. In case properties are changed using the OPM concepts, the most current time of generation and agent who created the state will be determined using the omg:containsPropertyState relation.
+Derived geometry descriptions are also stored as states as these change when the base geometry changes.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">thing</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#CurrentGeometryState" title="http://w3id.org/omg#CurrentGeometryState">Current geometry state</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#containsGeometryObject" title="http://w3id.org/omg#containsGeometryObject">contains geometry object</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#containsPropertyState" title="http://w3id.org/omg#containsPropertyState">contains property state</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>		 
+		 <dt>is in domainIncludes of</dt>
+         <dd>
+            <a href="#hasContext" title="http://w3id.org/omg#hasContext">has geometry context</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasGeometryDescription" title="http://w3id.org/omg#hasGeometryDescription">has geometry description</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasSimpleGeometry" title="http://w3id.org/omg#hasSimpleGeometry">has simple geoemtry</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasGeometryState" title="http://w3id.org/omg#hasGeometryState">has geometry state</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Context" title="http://w3id.org/omg#Context">Geometry Context</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Geometry" title="http://w3id.org/omg#Geometry">Geometry</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#GeometryDescription" title="http://w3id.org/omg#GeometryDescription">Geometry description</a>
+            <sup class="type-c" title="class">c</sup>, <span class="dotted" title="http://www.w3.org/2002/07/owl#NamedIndividual">named individual</span>
+            <sup class="type-c" title="class">c</sup>, <span class="dotted" title="https://w3id.org/opm#PropertyState">property state</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#complementsGeometry" title="http://w3id.org/omg#complementsGeometry">complements geometry</a>
+      </li>
+      <li>
+         <a href="#containsGeometryObject" title="http://w3id.org/omg#containsGeometryObject">contains geometry object</a>
+      </li>
+      <li>
+         <a href="#containsPropertyState" title="http://w3id.org/omg#containsPropertyState">contains property state</a>
+      </li>
+      <li>
+         <a href="#hasGeometry" title="http://w3id.org/omg#hasGeometry">has geometry</a>
+      </li>
+      <li>
+         <a href="#hasContext" title="http://w3id.org/omg#hasContext">has geometry context</a>
+      </li>
+      <li>
+         <a href="#hasGeometryDescription" title="http://w3id.org/omg#hasGeometryDescription">has geometry description</a>
+      </li>
+      <li>
+         <a href="#hasGeometryState" title="http://w3id.org/omg#hasGeometryState">has geometry state</a>
+      </li>
+      <li>
+         <a href="#hasInferredPropertyState" title="http://w3id.org/omg#hasInferredPropertyState">has inferred property state</a>
+      </li>
+      <li>
+         <a href="#isDerivedFromGeometry" title="http://w3id.org/omg#isDerivedFromGeometry">is derived from geometry</a>
+      </li>
+      <li>
+         <a href="#isExplicitlyDerivedFrom" title="http://w3id.org/omg#isExplicitlyDerivedFrom">is explicitly derived from</a>
+      </li>
+      <li>
+         <a href="#isImplicitlyDerivedFrom" title="http://w3id.org/omg#isImplicitlyDerivedFrom">is implicitly derived from</a>
+      </li>
+      <li>
+         <a href="#transformsGeometry" title="http://w3id.org/omg#transformsGeometry">transforms geometry</a>
+      </li>
+   </ul>
+   <div class="entity" id="complementsGeometry">
+      <h3>complements geometry<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/omg#complementsGeometry</p>
+      <div class="comment">
+         <span class="markdown">Relation between one geometry and another that is composed by the first. E.g. a point cloud of a columns laser scan in a high geometric detail complementing a simplified CSG geometry of the same column. Both geometry descriptions are closely related, but not directly derived from each other. The complementing geometry description may also just depict a small part of the entire geometry (e.g. the column header).</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Geometry" title="http://w3id.org/omg#Geometry">Geometry</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Geometry" title="http://w3id.org/omg#Geometry">Geometry</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="containsGeometryObject">
+      <h3>contains geometry object<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/omg#containsGeometryObject</p>
+      <div class="comment">
+         <span class="markdown">Relation between a geometry state and any object (node) of the related RDF-based geometry description that is relevant for this specific geometry state (not including deleted objects).</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#GeometryState" title="http://w3id.org/omg#GeometryState">Geometry state</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="containsPropertyState">
+      <h3>contains property state<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/omg#containsPropertyState</p>
+      <div class="comment">
+         <span class="markdown">Relation between a geometry state and a relevant property state. Any property that belongs to the geometry state's related geometry objects (using the omg:containsGeometryObject relation) can be a host for relevant property states. 
+This relation can be inferred, as long as the connection to the geometry object (omg:containsGeometryObject), its properties (seas:hasProperty) and the considered property state (opm:hasPropertyState) are modelled correctly.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#GeometryState" title="http://w3id.org/omg#GeometryState">Geometry state</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="https://w3id.org/opm#PropertyState">property state</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has sub-property chains</dt>
+            <dd>
+               <a href="#containsGeometryObject" title="http://w3id.org/omg#containsGeometryObject">contains geometry object</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <span class="dotted" title="https://w3id.org/seas/hasProperty">has property</span>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <span class="dotted" title="https://w3id.org/opm#hasPropertyState">has property state</span>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasGeometry">
+      <h3>has geometry<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/omg#hasGeometry</p>
+      <div class="comment">
+         <span class="markdown">Relation between any object and its geometric representation. An object may have multiple geometric representations. 
+The introduction of subproperties of this property for specific geometry descriptions (e.g. OBJ, GEOM, glTF) may ease querying for wanted geometry description formats.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Geometry" title="http://w3id.org/omg#Geometry">Geometry</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasContext">
+      <h3>has geometry context<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/omg#hasContext</p>
+      <div class="comment">
+         <span class="markdown">Relation between a geometry or geometry state and its geometric context. A singular geometry may have multiple contexts, just as one context can be used for different geometries (of different objects)</span>
+      </div>
+      <div class="description">
+         <dl>
+			<dt>domain includes </dt>
+			<dd>
+				<a href="#Geometry" title="http://w3id.org/omg#Geometry">Geometry</a>
+               <sup class="type-c" title="class">c</sup>
+				<a href="#GeometryState" title="http://w3id.org/omg#GeometryState">Geometry State</a>
+               <sup class="type-c" title="class">c</sup>
+			</dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Context" title="http://w3id.org/omg#Context">Geometry Context</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasGeometryDescription">
+      <h3>has geometry description<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/omg#hasGeometryDescription</p>
+      <div class="comment">
+         <span class="markdown">Relation between an object, a geometry, or a geometry state and its geometry description. This property is functional, thus, if more than one geometry description should be added to an object, the relation omg:hasGeometry to a new individual of the type omg:Geometry should be used for each geometry description. This step is necessary to allow interconnections between the geometry descriptions regarding their derivation or complementation for easier upkeep of data integrity.</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> functional</p>
+         <dl>
+			<dt>domain includes </dt>
+			<dd>
+				<a href="#Geometry" title="http://w3id.org/omg#Geometry">Geometry</a>
+               <sup class="type-c" title="class">c</sup>
+				<a href="#GeometryState" title="http://w3id.org/omg#GeometryState">Geometry State</a>
+               <sup class="type-c" title="class">c</sup>
+			</dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#GeometryDescription" title="http://w3id.org/omg#GeometryDescription">Geometry description</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasGeometryState">
+      <h3>has geometry state<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/omg#hasGeometryState</p>
+      <div class="comment">
+         <span class="markdown">Relation between a geometry and one of its geometry states. For each revision in an RDF-based geometry descriptions where changes were made to the graph nodes and not the properties, a new state must be defined to capture the new graph. This property is inverse functional as one geometry state can only belong to one geometry.</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> inverse functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Geometry" title="http://w3id.org/omg#Geometry">Geometry</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#GeometryState" title="http://w3id.org/omg#GeometryState">Geometry state</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasInferredPropertyState">
+      <h3>has inferred property state<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/omg#hasInferredPropertyState</p>
+      <div class="comment">
+         <span class="markdown">Relation between a property and its property state that has been inferred from the omg:isExplicitlyDerivedFrom relation. This relation will be inferred by the a chain axiom for every property that is derived from another (geometric) property (using omg:isExplicitlyDerivedFrom) which in turn has its own property state connected with the opm:hasPropertyState relation.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="https://w3id.org/opm#hasPropertyState">has property state</span>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has sub-property chains</dt>
+            <dd>
+               <a href="#isExplicitlyDerivedFrom" title="http://w3id.org/omg#isExplicitlyDerivedFrom">is explicitly derived from</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <span class="dotted" title="https://w3id.org/opm#hasPropertyState">has property state</span>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isDerivedFromGeometry">
+      <h3>is derived from geometry<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/omg#isDerivedFromGeometry</p>
+      <div class="comment">
+         <span class="markdown">Relation between two geometry descriptions where the first geometry can be derived from the second. It is possible for a geometry to be derived from multiple sources, as well as to model a bi-directional derivation between two geometries by using this relation.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#wasDerivedFrom">was derived from</span>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Geometry" title="http://w3id.org/omg#Geometry">Geometry</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Geometry" title="http://w3id.org/omg#Geometry">Geometry</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isExplicitlyDerivedFrom">
+      <h3>is explicitly derived from<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/omg#isExplicitlyDerivedFrom</p>
+      <div class="comment">
+         <span class="markdown">Relation between two properties, where the first property is explicitly derived from the other. This means that the first property will always have the same value as the second. Cases where this relation can be used are if an object's geometry is modelled RDF-based and contains a property defining e.g. the height of the object. Then the non-geometric property for height should be explicitly derived from the geometric property to ensure data integrity.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#wasDerivedFrom">was derived from</span>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="https://w3id.org/opm#Property">property</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="https://w3id.org/opm#Property">property</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isImplicitlyDerivedFrom">
+      <h3>is implicitly derived from<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/omg#isImplicitlyDerivedFrom</p>
+      <div class="comment">
+         <span class="markdown">Relation between a property and a geometry, where the property is implicitly derived from the geometry (e.g. properties for volumes or areas). This relation can be used to find inconsistencies, e.g. if the property has been changed while the geometry has not and vice versa.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#wasDerivedFrom">was derived from</span>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="https://w3id.org/opm#Property">property</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Geometry" title="http://w3id.org/omg#Geometry">Geometry</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="transformsGeometry">
+      <h3>transforms geometry<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/omg#transformsGeometry</p>
+      <div class="comment">
+         <span class="markdown">Relation between one geometry and another one, where the first is a transformation of the second. This might be used when placing multiple objects of the same type and geometry within the same graph (e.g. multiple chairs into a building model). The first geometry will only consist of a transformation or tanslation matrix.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Geometry" title="http://w3id.org/omg#Geometry">Geometry</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Geometry" title="http://w3id.org/omg#Geometry">Geometry</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#hasSimpleGeometry" title="http://w3id.org/omg#hasSimpleGeometry">has simple geometry</a>
+      </li>
+   </ul>
+   <div class="entity" id="hasSimpleGeometry">
+      <h3>has simple geometry<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/omg#hasSimpleGeometry</p>
+      <div class="comment">
+         <span class="markdown">Datatype property to connect a simple (non RDF-based), text-based or file-based geometry description to an object, geometry or geometry state. In case the geometry description is text-based or in a binary file format, it can be directly added to this property, if it is a file-based geometry description, the URI linking to the file should be added to this property. This property is functional, since adding multiple geometries (of the same geometry description type) can cause data discrepancies when they are not connected. Should multiple geometries be added to the object, the omg:Geometry class with its relation (omg:hasGeometry) or even geometry states (omg:GeometryState and omg:hasGeometryState) should be introduced for each geometry resp. geometry version.</span>
+      </div>
+	  <div class="description">
+		<dl>
+			<dt>domain includes </dt>
+			<dd>
+				<a href="#Geometry" title="http://w3id.org/omg#Geometry">Geometry</a>
+               <sup class="type-c" title="class">c</sup>
+				<a href="#GeometryState" title="http://w3id.org/omg#GeometryState">Geometry State</a>
+               <sup class="type-c" title="class">c</sup>
+			</dd>
+		</dl>
+		</div>
+   </div>
+</div><div id="annotationproperties">
+   <h3 id="annotationproperties" class="list">Annotation Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://schema.org/domainIncludes" title="http://schema.org/domainIncludes">
+            <span>domain includes</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="http://schema.org/domainIncludes">
+      <h3>domain includes<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.org/domainIncludes</p>
+   </div>   
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
+</div>
+</div>
+</html>

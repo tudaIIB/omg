@@ -1,0 +1,275 @@
+# baseURI: https://w3id.org/opm#
+# prefix: opm
+
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dce: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix opm: <https://w3id.org/opm#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix seas: <http://w3id.org/seas/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dcterms:contributor
+  rdf:type owl:AnnotationProperty ;
+.
+dcterms:creator
+  rdf:type owl:AnnotationProperty ;
+.
+dcterms:description
+  rdf:type owl:AnnotationProperty ;
+.
+dcterms:issued
+  rdf:type owl:AnnotationProperty ;
+.
+dcterms:license
+  rdf:type owl:AnnotationProperty ;
+.
+dcterms:modified
+  rdf:type owl:AnnotationProperty ;
+.
+dcterms:title
+  rdf:type owl:AnnotationProperty ;
+.
+vann:preferredNamespacePrefix
+  rdf:type owl:AnnotationProperty ;
+.
+vann:preferredNamespaceUri
+  rdf:type owl:AnnotationProperty ;
+.
+voaf:Vocabulary
+  rdf:type owl:Class ;
+.
+vs:term_status
+  rdf:type owl:AnnotationProperty ;
+.
+foaf:Person
+  rdf:type owl:Class ;
+.
+foaf:name
+  rdf:type owl:DatatypeProperty ;
+.
+opm:
+  rdf:type voaf:Vocabulary ;
+  rdf:type owl:Ontology ;
+  dce:Language "en" ;
+  dce:description "Ontology for Property Management" ;
+  dce:modified "May 25th 2018" ;
+  dce:title "OPM" ;
+  dcterms:contributor [
+      rdf:type foaf:Person ;
+      foaf:name "Mathias Bonduel" ;
+    ] ;
+  dcterms:contributor [
+      rdf:type foaf:Person ;
+      foaf:name "Maxime Lefrançois" ;
+    ] ;
+  dcterms:creator [
+      rdf:type foaf:Person ;
+      foaf:name "Mads Holten Rasmussen" ;
+    ] ;
+  dcterms:creator [
+      rdf:type foaf:Person ;
+      foaf:name "Pieter Pauwels" ;
+    ] ;
+  dcterms:description "The Ontology for Property Management (OPM) extends the concepts introduced in the Smart Energy Aware Systems (SEAS) Evaluations ontology."@en ;
+  dcterms:issued "2018-05-25"^^xsd:date ;
+  dcterms:license <https://creativecommons.org/licenses/by/1.0/> ;
+  dcterms:title "OPM: Ontology for Property Management"@en ;
+  vann:preferredNamespacePrefix "opm" ;
+  vann:preferredNamespaceUri opm: ;
+  owl:versionInfo "0.1.0" ;
+  owl:versionInfo "May 25th 2018" ;
+.
+opm:Assumed
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "An assumption is an unconfirmed property. Assumptions enable designers to move on with the design knowing that the assumed property might change as the project progresses."@en ;
+  rdfs:comment "En antagelse er en ikke-bekræftet egenskab. Antagelser gør det muligt for designere at fortsætte projekteringen velvidende at den antagede værdi muligvis vil ændres som projektet skrider frem."@da ;
+  rdfs:label "Antaget"@da ;
+  rdfs:label "Assumed"@en ;
+.
+opm:Calculation
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "A calculation holds the necessary information to infer derived properties."@en ;
+  rdfs:comment "En beregning indeholder den nødvendige information til at inferere en afledt egenskab."@da ;
+  rdfs:label "Beregning"@da ;
+  rdfs:label "Calculation"@en ;
+.
+opm:Confirmed
+  rdf:type owl:Class ;
+  rdfs:comment "A confirmed property is a property that has been validated by an agent who is authorized to do so. A confirmed property should not be changed."@en ;
+  rdfs:comment "En bekræftet egenskab er en egenskab, der er blevet valideret af en agent, som har autoritet dertil. En bekræftet egenskab bør ikke ændres."@da ;
+  rdfs:label "Bekræftet"@da ;
+  rdfs:label "Confirmed"@en ;
+.
+opm:CurrentPropertyState
+  rdf:type owl:Class ;
+  rdfs:comment "Egenskabsstadet som senest blev defineret klassificeres som opm:CurrentPropertyState."@da ;
+  rdfs:comment "The property state that was most recently defined is an instance of opm:CurrentPropertyState."@en ;
+  rdfs:label "Aktuel Egenskabstilstand"@da ;
+  rdfs:label "Current Property State"@en ;
+  rdfs:subClassOf opm:PropertyState ;
+.
+opm:Deleted
+  rdf:type owl:Class ;
+  rdfs:comment "A deleted property is a property that is no longer part of the design. The class enables a user to delete a property without removing it from the dataset."@en ;
+  rdfs:comment "En slettet egenskab er en egenskab, som ikke længere er en del af designet. Klassen gør det muligt for en bruger at slette en egenskab uden den slettes fra datasættet."@da ;
+  rdfs:label "Deleted"@en ;
+  rdfs:label "Slettet"@da ;
+.
+opm:Derived
+  rdf:type owl:Class ;
+  rdfs:comment "A derived property is a property that has been deduced from one or more other properties. Specifying a relationship to these should be done using the prov:wasDerivedFrom predicate."@en ;
+  rdfs:comment "En afledt egenskab er en egenskab der er udledt fra en eller flere andre egenskaber. Specifikation af relationer til disse bør gøres ved at bruge prædikatet prov:wasDerivedFrom."@da ;
+  rdfs:label "Afledt"@da ;
+  rdfs:label "Derived"@en ;
+.
+opm:OutdatedPropertyState
+  rdf:type owl:Class ;
+  rdfs:comment "Any property state that has been substituted with a new one is an instance of opm:OutdatedState."@en ;
+  rdfs:comment "Enhver egenskabstilstand som er blevet erstattet af en ny klassificeres som opm:OutdatedState."@da ;
+  rdfs:label "Forældet egenskabstilstand"@da ;
+  rdfs:label "Outdated Property State"@en ;
+  rdfs:subClassOf opm:PropertyState ;
+.
+opm:Property
+  rdf:type owl:Class ;
+  rdfs:label "Egenskab"@da ;
+  rdfs:label "Property"@en ;
+  owl:equivalentClass seas:Property ;
+.
+opm:PropertyState
+  rdf:type owl:Class ;
+  rdfs:comment """A state is an evaluation holding the value + metadata about a property that was true for the given time.
+Metadata must as a minimum be the time of generation stated by prov:generatedAtTime, but preferably also a prov:wasAttributedTo reference to the agent who created the state.
+Calculated properties are also stored as states as these change when an expression argument changes. Calculations must have an opm:expression and a prov:wasDerivedFrom assigned to them. prov:wasDerivedFrom is stored as a rdf:Seq pointing to the property states that were used for the calculation."""@en ;
+  rdfs:comment """Et stade er en evaluering, der indeholder værdien + metadata omkring en egenskab, som var gældende ved et givent tidspunkt.
+Metadata skal som minimum bestå af oprettelsestidspunktet givet ved prov:generatedAtTime, men helst også af en prov:wasAttributedTo reference til den agent som oprettede tilstanden.
+Beregnede egenskaber lagres også som tilstande da disse ændres når en beregningsparameter ændres. Beregninger skal have en opm:expression og en prov:wasDerivedFrom tilknyttet. prov:wasDerivedFrom lagres som en rdf:Seq, som peger på egenskabstilstandene som blev brugt til beregningen."""@da ;
+  rdfs:label "Egenskabstilstand"@da ;
+  rdfs:label "Property State"@en ;
+  rdfs:subClassOf seas:Evaluation ;
+.
+opm:Required
+  rdf:type owl:Class ;
+  rdfs:comment "A required property can be assigned to abstract models such as an abstract product model that holds the prerequisites for a future building. The requirements can be compared to properties of actual products available on the market."@en ;
+  rdfs:comment "Et egenskabskrav kan knyttes til abstrakte modeller så som en abstrakt produktmodel, som indeholder forudsætningerne for et fremtidigt byggeri. Kravene kan sammenlignes med egenskaber for reelle produkter, der er tilgængelige på markedet."@da ;
+  rdfs:label "Krævet"@da ;
+  rdfs:label "Required"@en ;
+.
+opm:argumentPaths
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment """Relation mellem en beregning og en liste (RDF collection) med argument-stier. En argument-sti angives i 'triples' og indikerer relationen mellem den Feature of Interest (FoI) til hvilken den udledte egenskab skal tilknyttes og den FoI, som indeholder argumentets egenskab.
+Hvis argumentet eksisterer på FoI'en selv kan denne refereres ved ```?foi xx:argProperty ?arg1```. Stien kan være enhver længde, og et andet eksempel kunne være et argument, som eksisterer på oversystemet af en FoI: ```?foi xx:subSystemOf/xx:argProperty ?arg1```."""@da ;
+  rdfs:comment """Relationship between a calculation and a list (RDF collection) of argument paths. An argument path is given in triples and indicates the relationship between the Feature of Interest (FoI) to which the inferred property will be applied and a FoI on which the argument property exists. 
+If the argument exists on the FoI itself it can be referred by ```?foi xx:argProperty ?arg1```. The path can be any length, and another example could be an argument existing on the super-system of a FoI: ```?foi xx:subSystemOf/xx:argProperty ?arg1```."""@en ;
+  rdfs:domain opm:Calculation ;
+  rdfs:label "argument-stier"@da ;
+  rdfs:label "arument paths"@en ;
+.
+opm:documentation
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Relation mellem en bekræftet tilstand og en fil, som indeholder dokumentation. Dette kunne være enten en mail, en skannet dokument eller en digital signatur."@da ;
+  rdfs:comment "Relationship between a confirmed state and a file holding some documentation. This could be either a mail, a scanned document or a digital signature."@en ;
+  rdfs:domain opm:PropertyState ;
+  rdfs:label "documentation"@en ;
+  rdfs:label "dokumentation"@da ;
+.
+opm:expression
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Peger på en tekststreng, som indeholder det (matematiske) udtryk, som skal eksekveres med en beregning. Argumenter i udtrykket er givet ved variabler (fx ?arg1), som svarer til dem der benyttes i argument-stierne."@da ;
+  rdfs:comment "Points to a literal containing the expression to execute with a calculation. Arguments of the expression are defined with vaiables (ie. ?arg1) corresponding to ones used in the argument paths."@en ;
+  rdfs:domain opm:Calculation ;
+  rdfs:label "expression"@en ;
+  rdfs:label "udtryk"@da ;
+.
+opm:foiRestriction
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Hvis en beregning kun skal tilknyttes én specifik feature af interesse (FoI) kan denne restriktion benyttes."@da ;
+  rdfs:comment "If a calculation is only to be applied to one specific feature of interest (FoI), this restriction can be used."@en ;
+  rdfs:domain opm:Calculation ;
+  rdfs:label "feature af interesse restriktion"@da ;
+  rdfs:label "feature of interest restriction"@en ;
+  rdfs:range seas:FeatureOfInterest ;
+.
+opm:hasProperty
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "NB! Deprecated. Relationship between a feature of interest and a property it has assigned."@en ;
+  rdfs:comment "NB! Forældet. Relation mellem en feature af interesse og en egenskab denne har tilknyttet."@da ;
+  rdfs:label "har egenskab"@da ;
+  rdfs:label "has property"@en ;
+  rdfs:range opm:Property ;
+  rdfs:subPropertyOf seas:hasProperty ;
+.
+opm:hasPropertyState
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Relation mellem en egenskab og en af dennes tilstande."@da ;
+  rdfs:comment "Relationship between a property and one of its states."@en ;
+  rdfs:domain opm:Property ;
+  rdfs:label "har egenskabstilstand"@da ;
+  rdfs:label "has property state"@en ;
+  rdfs:range opm:PropertyState ;
+  rdfs:subPropertyOf seas:evaluation ;
+.
+opm:inferredProperty
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Relationship between a calculation and the property kind it will infer."@en ;
+  rdfs:comment "relation mellem en beregning og den egenskabstype denne vil udlede."@da ;
+  rdfs:domain opm:Calculation ;
+  rdfs:label "inferred property"@en ;
+  rdfs:label "udledt egenskab"@da ;
+  rdfs:range opm:Property ;
+.
+opm:pathRestriction
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Hvis en beregning kun skal tilknyttes features af interesse (FoIs) som har en bestemt relation tilknyttet, kan denne restriktion benyttes"@da ;
+  rdfs:comment "If a calculation is only to be applied to features of interest (FoIs) that have a certain relationship applied, this restriction can be used."@en ;
+  rdfs:domain opm:Calculation ;
+  rdfs:label "path restriction"@en ;
+  rdfs:label "sti-begrænsning"@da ;
+  rdfs:range xsd:string ;
+.
+opm:unit
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "NB! Deprecated: use any preferred unit system (QUDT, OM, schema, CDT UCUM etc.). Points to a literal containing the unit of the inferred property. The unit is applied as a concatenation with the calculation result. If the result is 40 and the unit is '°C'^^cdt:temperature the result will be inferred as '40 °C'^^cdt:temperature."@en ;
+  rdfs:comment "NB! Forældet: brug et hvert foretrukket enhedssystem (QUDT, OM, schema, CDT UCUM etc.). Peger på en tekststreng, som indeholder enheden for den udledte egenskab. Enheden tilføjes som en sammenkædning med beregningsresultatet. Hvis resultatet er 40 og enheden er '°C'^^cdt:temperature bliver resultatet udledt som '40 °C'^^cdt:temperature."@da ;
+  rdfs:domain opm:Calculation ;
+  rdfs:label "enhed"@da ;
+  rdfs:label "unit"@en ;
+.
+opm:valueAtState
+  rdf:type rdf:Property ;
+  rdfs:comment "NB! Deprecated: use schema:value instead. Points to a literal with the value of the property at the given state."@en ;
+  rdfs:comment "NB! Forældet: brug schema:value i stedet. Peger på en tekststreng med værdien af egenskaben ved den givne tilstand."@da ;
+  rdfs:domain opm:PropertyState ;
+  rdfs:label "value at state"@en ;
+  rdfs:label "værdi ved tilstand"@da ;
+.
+[
+  rdf:type owl:AllDisjointClasses ;
+  owl:members (
+      opm:Assumption
+      opm:Confirmed
+    ) ;
+].
+[
+  rdf:type owl:AllDisjointClasses ;
+  owl:members (
+      opm:CurrentPropertyState
+      opm:OutdatedState
+    ) ;
+].
+[
+  rdf:type owl:AllDisjointClasses ;
+  owl:members (
+      opm:Property
+      opm:PropertyState
+      opm:Calculation
+    ) ;
+].
