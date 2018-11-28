@@ -30,7 +30,8 @@
       rdf:type foaf:Person ;
       foaf:name "Pieter Pauwels" ;
     ] ;
-  dcterms:description "The Ontology for Managing Geometry (OMG) is based the concepts introduced in the Ontology for Property Management (OPM) ontology."@en ;
+  dcterms:description """The Ontology for Managing Geometry (OMG) is an ontology for describing geometry descriptions of objects. It provides means to support the application of multiple geometry descriptions of the same object as well as the description of the geometry evolution over time. The OMG is based the concepts introduced in the Ontology for Property Management (OPM) ontology. 
+This ontology was created within the research project SCOPE, funded by the German Federal Ministry for Economic Affairs and Energy (BMWi)."""@en ;
   dcterms:issued "2018-11-28"^^xsd:date ;
   dcterms:title "OMG: Ontology for Managing Geometry"@en ;
   vann:preferredNamespacePrefix "omg" ;
