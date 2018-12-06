@@ -1,10 +1,10 @@
-# baseURI: http://w3id.org/omg
+# baseURI: https://w3id.org/omg
 # prefix: omg
 
 @prefix bot: <https://w3id.org/bot#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix omg: <http://w3id.org/omg#> .
+@prefix omg: <https://w3id.org/omg#> .
 @prefix opm: <https://w3id.org/opm#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -16,7 +16,12 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://w3id.org/omg>
+owl:NamedIndividual
+  owl:disjointWith omg:Context ;
+  owl:disjointWith omg:Geometry ;
+  owl:disjointWith omg:GeometryState ;
+.
+<https://w3id.org/omg>
   rdf:type owl:Ontology ;
   dcterms:creator [
       rdf:type foaf:Person ;
@@ -35,20 +40,18 @@ This ontology was created within the research project SCOPE, funded by the Germa
   dcterms:issued "2018-11-28"^^xsd:date ;
   dcterms:title "OMG: Ontology for Managing Geometry"@en ;
   vann:preferredNamespacePrefix "omg" ;
-  vann:preferredNamespaceUri <http://w3id.org/omg> ;
+  vann:preferredNamespaceUri <https://w3id.org/omg> ;
   owl:versionInfo "0.0.0" ;
-  owl:versionInfo "2018-11-28"^^xsd:date ;
 .
 omg:Context
   rdf:type owl:Class ;
   rdfs:comment "Context of one (or multiple) geometry descriptions. A context can help extracting relevant geometry descriptions by connecting those to a specific shared context. Geometric contexts can be views of planners, planning stages (versions), or individually created contexts."@en ;
   rdfs:label "Geometriekontext"@de ;
-  rdfs:label "Geometry Context"@en ;
+  rdfs:label "Geometry context"@en ;
   rdfs:subClassOf owl:Thing ;
-  owl:disjointWith omg:Geometry ;
-  owl:disjointWith omg:GeometryDescription ;
-  owl:disjointWith omg:GeometryState ;
   owl:disjointWith owl:NamedIndividual ;
+  owl:disjointWith omg:Geometry ;
+  owl:disjointWith omg:GeometryState ;
 .
 omg:CurrentGeometryState
   rdf:type owl:Class ;
@@ -63,22 +66,10 @@ omg:Geometry
   rdfs:label "Geometrie"@de ;
   rdfs:label "Geometry"@en ;
   rdfs:subClassOf owl:Thing ;
-  owl:disjointWith omg:Context ;
-  owl:disjointWith omg:GeometryDescription ;
-  owl:disjointWith omg:GeometryState ;
   owl:disjointWith owl:NamedIndividual ;
+  owl:disjointWith omg:Context ;
+  owl:disjointWith omg:GeometryState ;
   owl:disjointWith opm:Property ;
-.
-omg:GeometryDescription
-  rdf:type owl:Class ;
-  rdfs:comment "A Geometry Description is the first node of an RDF-based geometry description."@en ;
-  rdfs:label "Geometriebeschreibung"@de ;
-  rdfs:label "Geometry description"@en ;
-  rdfs:subClassOf owl:Thing ;
-  owl:disjointWith omg:Context ;
-  owl:disjointWith omg:Geometry ;
-  owl:disjointWith omg:GeometryState ;
-  owl:disjointWith owl:NamedIndividual ;
 .
 omg:GeometryState
   rdf:type owl:Class ;
@@ -90,10 +81,9 @@ Derived geometry descriptions are also stored as states as these change when the
   rdfs:label "Geometry state"@en ;
   rdfs:seeAlso opm:PropertyState ;
   rdfs:subClassOf owl:Thing ;
+  owl:disjointWith owl:NamedIndividual ;
   owl:disjointWith omg:Context ;
   owl:disjointWith omg:Geometry ;
-  owl:disjointWith omg:GeometryDescription ;
-  owl:disjointWith owl:NamedIndividual ;
   owl:disjointWith opm:PropertyState ;
 .
 omg:complementsGeometry
@@ -122,6 +112,14 @@ This relation can be inferred, as long as the connection to the geometry object 
       opm:hasPropertyState
     ) ;
 .
+omg:hasComplexGeometryDescription
+  rdf:type owl:FunctionalProperty ;
+  rdf:type owl:ObjectProperty ;
+  schema:domainIncludes omg:Geometry ;
+  schema:domainIncludes omg:GeometryState ;
+  rdfs:comment "Relation between an object, a geometry, or a geometry state and its RDF-based geometry description. This property is functional, thus, if more than one geometry description should be added to an object, the relation omg:hasGeometry to a new individual of the type omg:Geometry should be used for each geometry description. This step is necessary to allow interconnections between the geometry descriptions regarding their derivation or complementation for easier upkeep of data integrity."@en ;
+  rdfs:label "has complex geometry description"@en ;
+.
 omg:hasContext
   rdf:type owl:ObjectProperty ;
   schema:domainIncludes omg:Geometry ;
@@ -136,15 +134,6 @@ omg:hasGeometry
 The introduction of subproperties of this property for specific geometry descriptions (e.g. OBJ, GEOM, glTF) may ease querying for wanted geometry description formats."""@en ;
   rdfs:label "has geometry"@en ;
   rdfs:range omg:Geometry ;
-.
-omg:hasGeometryDescription
-  rdf:type owl:FunctionalProperty ;
-  rdf:type owl:ObjectProperty ;
-  schema:domainIncludes omg:Geometry ;
-  schema:domainIncludes omg:GeometryState ;
-  rdfs:comment "Relation between an object, a geometry, or a geometry state and its geometry description. This property is functional, thus, if more than one geometry description should be added to an object, the relation omg:hasGeometry to a new individual of the type omg:Geometry should be used for each geometry description. This step is necessary to allow interconnections between the geometry descriptions regarding their derivation or complementation for easier upkeep of data integrity."@en ;
-  rdfs:label "has geometry description"@en ;
-  rdfs:range omg:GeometryDescription ;
 .
 omg:hasGeometryState
   rdf:type owl:InverseFunctionalProperty ;
@@ -166,12 +155,12 @@ omg:hasInferredPropertyState
       opm:hasPropertyState
     ) ;
 .
-omg:hasSimpleGeometry
+omg:hasSimpleGeometryDescription
   rdf:type owl:DatatypeProperty ;
   schema:domainIncludes omg:Geometry ;
   schema:domainIncludes omg:GeometryState ;
-  rdfs:comment "Datatype property to connect a simple (non RDF-based), text-based or file-based geometry description to an object, geometry or geometry state. In case the geometry description is text-based or in a binary file format, it can be directly added to this property, if it is a file-based geometry description, the URI linking to the file should be added to this property. This property is functional, since adding multiple geometries (of the same geometry description type) can cause data discrepancies when they are not connected. Should multiple geometries be added to the object, the omg:Geometry class with its relation (omg:hasGeometry) or even geometry states (omg:GeometryState and omg:hasGeometryState) should be introduced for each geometry resp. geometry version."@en ;
-  rdfs:label "has simple geometry"@en ;
+  rdfs:comment "Datatype property to connect a simple (non RDF-based), text-based or file-based geometry description to an object, geometry or geometry state. In case the geometry description is text-based or in a binary file format, it can be directly added to this property, if it is a file-based geometry description, the URI linking to the file should be added to this property. Should multiple geometries be added to the object, the omg:Geometry class with its relation (omg:hasGeometry) or even geometry states (omg:GeometryState and omg:hasGeometryState) should be introduced for each geometry resp. geometry version."@en ;
+  rdfs:label "has simple geometry description"@en ;
 .
 omg:isDerivedFromGeometry
   rdf:type owl:ObjectProperty ;
@@ -180,6 +169,14 @@ omg:isDerivedFromGeometry
   rdfs:label "is derived from geometry"@en ;
   rdfs:range omg:Geometry ;
   rdfs:subPropertyOf prov:wasDerivedFrom ;
+.
+omg:isDerivedFromGeometryState
+  rdf:type owl:FunctionalProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Relation between two geometry states where the first (domain) has been converted from the second (range). A geometry state can only be converted from one other geometry state."@en ;
+  rdfs:domain omg:GeometryState ;
+  rdfs:label "is derived from geometry state"@en ;
+  rdfs:range omg:GeometryState ;
 .
 omg:isExplicitlyDerivedFrom
   rdf:type owl:ObjectProperty ;
@@ -203,12 +200,6 @@ omg:transformsGeometry
   rdfs:domain omg:Geometry ;
   rdfs:label "transforms geometry"@en ;
   rdfs:range omg:Geometry ;
-.
-owl:NamedIndividual
-  owl:disjointWith omg:Context ;
-  owl:disjointWith omg:Geometry ;
-  owl:disjointWith omg:GeometryDescription ;
-  owl:disjointWith omg:GeometryState ;
 .
 [
   rdf:type foaf:Person ;

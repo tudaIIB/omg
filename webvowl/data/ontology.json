@@ -1,0 +1,657 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.4), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "de", "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://w3id.org/omg", "http://www.w3.org/2002/07/owl", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/ns/prov", "http://www.w3.org/2001/XMLSchema", "http://xmlns.com/foaf/0.1", "https://w3id.org/opm", "https://w3id.org/seas" ],
+    "title" : {
+      "en" : "OMG: Ontology for Managing Geometry"
+    },
+    "iri" : "https://w3id.org/omg",
+    "version" : "0.0.0",
+    "author" : [ "_:genid2147483649", "_:genid2147483648", "_:genid2147483650" ],
+    "description" : {
+      "en" : "The Ontology for Managing Geometry (OMG) is an ontology for describing geometry descriptions of objects. It provides means to support the application of multiple geometry descriptions of the same object as well as the description of the geometry evolution over time. The OMG is based the concepts introduced in the Ontology for Property Management (OPM) ontology. \r\nThis ontology was created within the research project SCOPE, funded by the German Federal Ministry for Economic Affairs and Energy (BMWi)."
+    },
+    "other" : {
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "_:genid2147483648",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "_:genid2147483649",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "_:genid2147483650",
+        "type" : "label"
+      } ],
+      "preferredNamespacePrefix" : [ {
+        "identifier" : "preferredNamespacePrefix",
+        "language" : "undefined",
+        "value" : "omg",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://w3id.org/omg",
+        "type" : "iri"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "0.0.0",
+        "type" : "label"
+      } ],
+      "issued" : [ {
+        "identifier" : "issued",
+        "language" : "undefined",
+        "value" : "2018-11-28",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "OMG: Ontology for Managing Geometry",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "metrics" : {
+    "classCount" : 9,
+    "objectPropertyCount" : 16,
+    "datatypePropertyCount" : 1,
+    "individualCount" : 0
+  },
+  "class" : [ {
+    "id" : "3",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "4",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "24",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "31",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "38",
+    "type" : "owl:Class"
+  }, {
+    "id" : "33",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "30",
+    "type" : "owl:Thing"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "3",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "4",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "https://w3id.org/opm#Property",
+    "baseIri" : "https://w3id.org/opm",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Property"
+    },
+    "attributes" : [ "external" ],
+    "id" : "19"
+  }, {
+    "iri" : "https://w3id.org/opm#PropertyState",
+    "baseIri" : "https://w3id.org/opm",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PropertyState"
+    },
+    "attributes" : [ "external" ],
+    "id" : "24"
+  }, {
+    "iri" : "https://w3id.org/omg#GeometryState",
+    "baseIri" : "https://w3id.org/omg",
+    "instances" : 0,
+    "annotations" : {
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://w3id.org/opm#PropertyState",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "de" : "Geometriestatus",
+      "IRI-based" : "GeometryState",
+      "en" : "Geometry state"
+    },
+    "subClasses" : [ "31" ],
+    "comment" : {
+      "en" : "A geometry state is an evaluation holding the geometry description and metadata about a geometry that was true for the given time. \r\nIn case of geometry states, changing geometric properties does not cause the need for a new geometry state as long as the property was changed using the OPM concepts. If this is not the case, a copy of the now valid graph must be created and attached to a new geometry state. If an object within the geometry graph is changed (e.g. changing the primitive \"Box\" into a primitive \"Sphere\"), the old primitive (\"Box\") should be classified as opm:Deleted and the new primitive (\"Sphere\") should be added to the geometry graph in the correct place. The new geometry state should then be connected to any object of the geometry graph that is not opm:Deleted using the omg:containsGeometryObject relation.\r\nMetadata of a geometry state must as a minimum be the time of generation stated by prov:generatedAtTime, but preferably also a prov:wasAttributedTo reference to the agent who created the state. In case properties are changed using the OPM concepts, the most current time of generation and agent who created the state will be determined using the omg:containsPropertyState relation.\r\nDerived geometry descriptions are also stored as states as these change when the base geometry changes."
+    },
+    "id" : "10"
+  }, {
+    "iri" : "https://w3id.org/omg#Context",
+    "baseIri" : "https://w3id.org/omg",
+    "instances" : 0,
+    "label" : {
+      "de" : "Geometriekontext",
+      "IRI-based" : "Context",
+      "en" : "Geometry Context"
+    },
+    "comment" : {
+      "en" : "Context of one (or multiple) geometry descriptions. A context can help extracting relevant geometry descriptions by connecting those to a specific shared context. Geometric contexts can be views of planners, planning stages (versions), or individually created contexts."
+    },
+    "id" : "14"
+  }, {
+    "iri" : "https://w3id.org/omg#CurrentGeometryState",
+    "baseIri" : "https://w3id.org/omg",
+    "instances" : 0,
+    "label" : {
+      "de" : "Aktueller Geometrie Status",
+      "IRI-based" : "CurrentGeometryState",
+      "en" : "Current geometry state"
+    },
+    "comment" : {
+      "en" : "A current geometry state classifies the most current - and thereby valid - geometry state. Which state is most current will be defined by the added timestamp using the prov:generatedAtTime relation."
+    },
+    "id" : "31",
+    "superClasses" : [ "10" ]
+  }, {
+    "iri" : "https://w3id.org/omg#Geometry",
+    "baseIri" : "https://w3id.org/omg",
+    "instances" : 0,
+    "label" : {
+      "de" : "Geometrie",
+      "IRI-based" : "Geometry",
+      "en" : "Geometry"
+    },
+    "comment" : {
+      "en" : "Abstract node for geometry that should not contain geometry descriptions (neither RDF-based or text-based). This node can be used to attach additional information to the information as author, time of creation, geometry context or dependencies with other geometry descriptions as transformations, complementations or derivations. By creating subclasses of this class for specific types of geometry descriptions (e.g. OBJ, GEOM, glTF), more informational value can be added and used in querying for specific geometry description formats."
+    },
+    "id" : "1"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "baseIri" : "http://www.w3.org/2002/07/owl",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "NamedIndividual"
+    },
+    "attributes" : [ "external" ],
+    "id" : "13"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "11",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/Person",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Person"
+    },
+    "attributes" : [ "external" ],
+    "id" : "38"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "33",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "30",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "2",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "5",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "9",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "12",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "15",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "16",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "17",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "18",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "20",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "21",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "23",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "7",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "25",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "26",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "27",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "28",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "29",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "32",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "8",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "34",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "22",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "6",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "35",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "36",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "37",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "https://w3id.org/omg#complementsGeometry",
+    "baseIri" : "https://w3id.org/omg",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "complementsGeometry",
+      "en" : "complements geometry"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Relation between one geometry and another that is composed by the first. E.g. a point cloud of a columns laser scan in a high geometric detail complementing a simplified CSG geometry of the same column. Both geometry descriptions are closely related, but not directly derived from each other. The complementing geometry description may also just depict a small part of the entire geometry (e.g. the column header)."
+    },
+    "attributes" : [ "object" ],
+    "id" : "0"
+  }, {
+    "iri" : "https://w3id.org/omg#hasSimpleGeometryDescription",
+    "baseIri" : "https://w3id.org/omg",
+    "range" : "4",
+    "annotations" : {
+      "domainIncludes" : [ {
+        "identifier" : "domainIncludes",
+        "language" : "undefined",
+        "value" : "https://w3id.org/omg#Geometry",
+        "type" : "iri"
+      }, {
+        "identifier" : "domainIncludes",
+        "language" : "undefined",
+        "value" : "https://w3id.org/omg#GeometryState",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasSimpleGeometryDescription",
+      "en" : "has simple geometry description"
+    },
+    "domain" : "3",
+    "comment" : {
+      "en" : "Datatype property to connect a simple (non RDF-based), text-based or file-based geometry description to an object, geometry or geometry state. In case the geometry description is text-based or in a binary file format, it can be directly added to this property, if it is a file-based geometry description, the URI linking to the file should be added to this property. Should multiple geometries be added to the object, the omg:Geometry class with its relation (omg:hasGeometry) or even geometry states (omg:GeometryState and omg:hasGeometryState) should be introduced for each geometry resp. geometry version."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "2"
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#wasDerivedFrom",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "wasDerivedFrom"
+    },
+    "domain" : "3",
+    "subproperty" : [ "6", "7", "8" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "5"
+  }, {
+    "iri" : "https://w3id.org/omg#containsGeometryObject",
+    "baseIri" : "https://w3id.org/omg",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "containsGeometryObject",
+      "en" : "contains geometry object"
+    },
+    "domain" : "10",
+    "comment" : {
+      "en" : "Relation between a geometry state and any object (node) of the related RDF-based geometry description that is relevant for this specific geometry state (not including deleted objects)."
+    },
+    "attributes" : [ "object" ],
+    "id" : "9"
+  }, {
+    "range" : "14",
+    "domain" : "13",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "12"
+  }, {
+    "range" : "1",
+    "domain" : "14",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "15"
+  }, {
+    "range" : "10",
+    "domain" : "14",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "16"
+  }, {
+    "iri" : "https://w3id.org/omg#transformsGeometry",
+    "baseIri" : "https://w3id.org/omg",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "transformsGeometry",
+      "en" : "transforms geometry"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Relation between one geometry and another one, where the first is a transformation of the second. This might be used when placing multiple objects of the same type and geometry within the same graph (e.g. multiple chairs into a building model). The first geometry will only consist of a transformation or tanslation matrix."
+    },
+    "attributes" : [ "object" ],
+    "id" : "17"
+  }, {
+    "range" : "19",
+    "domain" : "1",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "18"
+  }, {
+    "range" : "10",
+    "domain" : "1",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "20"
+  }, {
+    "iri" : "https://w3id.org/opm#hasPropertyState",
+    "baseIri" : "https://w3id.org/opm",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "hasPropertyState"
+    },
+    "domain" : "3",
+    "subproperty" : [ "22" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "21"
+  }, {
+    "range" : "24",
+    "domain" : "10",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "23"
+  }, {
+    "iri" : "https://w3id.org/omg#isImplicitlyDerivedFrom",
+    "baseIri" : "https://w3id.org/omg",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "isImplicitlyDerivedFrom",
+      "en" : "is implicitly derived from"
+    },
+    "superproperty" : [ "5" ],
+    "domain" : "19",
+    "comment" : {
+      "en" : "Relation between a property and a geometry, where the property is implicitly derived from the geometry (e.g. properties for volumes or areas). This relation can be used to find inconsistencies, e.g. if the property has been changed while the geometry has not and vice versa."
+    },
+    "attributes" : [ "object" ],
+    "id" : "7"
+  }, {
+    "iri" : "https://w3id.org/omg#containsPropertyState",
+    "baseIri" : "https://w3id.org/omg",
+    "range" : "24",
+    "label" : {
+      "IRI-based" : "containsPropertyState",
+      "en" : "contains property state"
+    },
+    "domain" : "10",
+    "comment" : {
+      "en" : "Relation between a geometry state and a relevant property state. Any property that belongs to the geometry state's related geometry objects (using the omg:containsGeometryObject relation) can be a host for relevant property states. \r\nThis relation can be inferred, as long as the connection to the geometry object (omg:containsGeometryObject), its properties (seas:hasProperty) and the considered property state (opm:hasPropertyState) are modelled correctly."
+    },
+    "attributes" : [ "object" ],
+    "id" : "25"
+  }, {
+    "range" : "1",
+    "domain" : "13",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "26"
+  }, {
+    "range" : "10",
+    "domain" : "13",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "27"
+  }, {
+    "iri" : "https://w3id.org/omg#hasComplexGeometryDescription",
+    "baseIri" : "https://w3id.org/omg",
+    "range" : "3",
+    "annotations" : {
+      "domainIncludes" : [ {
+        "identifier" : "domainIncludes",
+        "language" : "undefined",
+        "value" : "https://w3id.org/omg#GeometryState",
+        "type" : "iri"
+      }, {
+        "identifier" : "domainIncludes",
+        "language" : "undefined",
+        "value" : "https://w3id.org/omg#Geometry",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasComplexGeometryDescription",
+      "en" : "has complex geometry description"
+    },
+    "domain" : "3",
+    "comment" : {
+      "en" : "Relation between an object, a geometry, or a geometry state and its RDF-based geometry description. This property is functional, thus, if more than one geometry description should be added to an object, the relation omg:hasGeometry to a new individual of the type omg:Geometry should be used for each geometry description. This step is necessary to allow interconnections between the geometry descriptions regarding their derivation or complementation for easier upkeep of data integrity."
+    },
+    "attributes" : [ "functional", "object" ],
+    "id" : "28"
+  }, {
+    "iri" : "https://w3id.org/omg#hasGeometry",
+    "baseIri" : "https://w3id.org/omg",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "hasGeometry",
+      "en" : "has geometry"
+    },
+    "domain" : "30",
+    "comment" : {
+      "en" : "Relation between any object and its geometric representation. An object may have multiple geometric representations. \r\nThe introduction of subproperties of this property for specific geometry descriptions (e.g. OBJ, GEOM, glTF) may ease querying for wanted geometry description formats."
+    },
+    "attributes" : [ "object" ],
+    "id" : "29"
+  }, {
+    "iri" : "https://w3id.org/omg#hasContext",
+    "baseIri" : "https://w3id.org/omg",
+    "range" : "14",
+    "annotations" : {
+      "domainIncludes" : [ {
+        "identifier" : "domainIncludes",
+        "language" : "undefined",
+        "value" : "https://w3id.org/omg#Geometry",
+        "type" : "iri"
+      }, {
+        "identifier" : "domainIncludes",
+        "language" : "undefined",
+        "value" : "https://w3id.org/omg#GeometryState",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasContext",
+      "en" : "has geometry context"
+    },
+    "domain" : "33",
+    "comment" : {
+      "en" : "Relation between a geometry or geometry state and its geometric context. A singular geometry may have multiple contexts, just as one context can be used for different geometries (of different objects)"
+    },
+    "attributes" : [ "object" ],
+    "id" : "32"
+  }, {
+    "iri" : "https://w3id.org/omg#isDerivedFromGeometry",
+    "baseIri" : "https://w3id.org/omg",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "isDerivedFromGeometry",
+      "en" : "is derived from geometry"
+    },
+    "superproperty" : [ "5" ],
+    "domain" : "1",
+    "comment" : {
+      "en" : "Relation between two geometry descriptions where the first geometry can be derived from the second. It is possible for a geometry to be derived from multiple sources, as well as to model a bi-directional derivation between two geometries by using this relation."
+    },
+    "attributes" : [ "object" ],
+    "id" : "8"
+  }, {
+    "iri" : "https://w3id.org/omg#hasGeometryState",
+    "baseIri" : "https://w3id.org/omg",
+    "range" : "10",
+    "annotations" : {
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://w3id.org/opm#hasPropertyState",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasGeometryState",
+      "en" : "has geometry state"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Relation between a geometry and one of its geometry states. For each revision in an RDF-based geometry descriptions where changes were made to the graph nodes and not the properties, a new state must be defined to capture the new graph. This property is inverse functional as one geometry state can only belong to one geometry."
+    },
+    "attributes" : [ "inverse functional", "object" ],
+    "id" : "34"
+  }, {
+    "iri" : "https://w3id.org/omg#hasInferredPropertyState",
+    "baseIri" : "https://w3id.org/omg",
+    "range" : "3",
+    "annotations" : {
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://w3id.org/opm#hasPropertyState",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasInferredPropertyState",
+      "en" : "has inferred property state"
+    },
+    "superproperty" : [ "21" ],
+    "domain" : "3",
+    "comment" : {
+      "en" : "Relation between a property and its property state that has been inferred from the omg:isExplicitlyDerivedFrom relation. This relation will be inferred by the a chain axiom for every property that is derived from another (geometric) property (using omg:isExplicitlyDerivedFrom) which in turn has its own property state connected with the opm:hasPropertyState relation."
+    },
+    "attributes" : [ "object" ],
+    "id" : "22"
+  }, {
+    "iri" : "https://w3id.org/omg#isExplicitlyDerivedFrom",
+    "baseIri" : "https://w3id.org/omg",
+    "range" : "19",
+    "label" : {
+      "IRI-based" : "isExplicitlyDerivedFrom",
+      "en" : "is explicitly derived from"
+    },
+    "superproperty" : [ "5" ],
+    "domain" : "19",
+    "comment" : {
+      "en" : "Relation between two properties, where the first property is explicitly derived from the other. This means that the first property will always have the same value as the second. Cases where this relation can be used are if an object's geometry is modelled RDF-based and contains a property defining e.g. the height of the object. Then the non-geometric property for height should be explicitly derived from the geometric property to ensure data integrity."
+    },
+    "attributes" : [ "object" ],
+    "id" : "6"
+  }, {
+    "iri" : "https://w3id.org/seas/hasProperty",
+    "baseIri" : "https://w3id.org/seas",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "hasProperty"
+    },
+    "domain" : "3",
+    "attributes" : [ "external", "object" ],
+    "id" : "35"
+  }, {
+    "range" : "10",
+    "domain" : "31",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "36"
+  }, {
+    "iri" : "https://w3id.org/omg#isDerivedFromGeometryState",
+    "baseIri" : "https://w3id.org/omg",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "isDerivedFromGeometryState",
+      "en" : "is derived from geometry state"
+    },
+    "domain" : "10",
+    "comment" : {
+      "en" : "Relation between two geometry states where the first (domain) has been converted from the second (range). A geometry state can only be converted from one other geometry state."
+    },
+    "attributes" : [ "functional", "object" ],
+    "id" : "37"
+  } ]
+}

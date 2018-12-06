@@ -1,7 +1,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-<http://w3id.org/omg> a prov:Entity;
+<..\index-en.html> a prov:Entity;
 	 dc:title "OMG: Ontology for Managing Geometry";
 	 prov:wasAttributedTo :agent0;
 	 prov:wasAttributedTo :agent1;
