@@ -78,7 +78,7 @@ This section provides details for each class and property defined by .
          <dd>
             <a href="#https://w3id.org/omg#GeometryContext" title="https://w3id.org/omg#GeometryContext">Geometry context</a>
             <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/omg#GeometryState" title="https://w3id.org/omg#GeometryState">Geometry state</a>
-            <sup class="type-c" title="class">c</sup>, <span class="dotted" title="https://w3id.org/seas/#Property">property</span>
+            <sup class="type-c" title="class">c</sup>, <span class="dotted" title="https://w3id.org/opm#Property">property</span>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -142,7 +142,7 @@ Derived geometry descriptions are also stored as states as these change when the
             <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/omg#containsPropertyState" title="https://w3id.org/omg#containsPropertyState">contains property state</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/omg#isDerivedFromGeometryState" title="https://w3id.org/omg#isDerivedFromGeometryState">is derived from geometry state</a>
             <sup class="type-op" title="object property">op</sup>
-         </dd>
+         </dd>	 
 		 <dt>is in domainIncludes of</dt>
          <dd>
             <a href="#hasContext" title="https://w3id.org/omg#hasGeometryContext">has geometry context</a>
@@ -353,7 +353,6 @@ This relation can be inferred, as long as the connection to the geometry object 
 				<a href="#GeometryState" title="https://w3id.org/omg#GeometryState">Geometry state</a>
                <sup class="type-c" title="class">c</sup>
 			</dd>
-         <dl>
             <dt>has range</dt>
             <dd>
                <a href="#https://w3id.org/omg#GeometryContext" title="https://w3id.org/omg#GeometryContext">Geometry context</a>
@@ -432,7 +431,6 @@ This relation can be inferred, as long as the connection to the geometry object 
             <dt>has super-properties</dt>
             <dd>
                <span class="dotted" title="http://www.w3.org/ns/prov#wasDerivedFrom">was derived from</span>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
             <dd>
@@ -464,7 +462,6 @@ This relation can be inferred, as long as the connection to the geometry object 
             <dt>has super-properties</dt>
             <dd>
                <span class="dotted" title="http://www.w3.org/ns/prov#wasDerivedFrom">was derived from</span>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
             <dd>
@@ -494,16 +491,15 @@ This relation can be inferred, as long as the connection to the geometry object 
             <dt>has super-properties</dt>
             <dd>
                <span class="dotted" title="http://www.w3.org/ns/prov#wasDerivedFrom">was derived from</span>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/seas/#Property">property</span>
+               <span class="dotted" title="https://w3id.org/opm#Property">property</span>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/seas/#Property">property</span>
+               <span class="dotted" title="https://w3id.org/opm#Property">property</span>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -524,11 +520,10 @@ This relation can be inferred, as long as the connection to the geometry object 
             <dt>has super-properties</dt>
             <dd>
                <span class="dotted" title="http://www.w3.org/ns/prov#wasDerivedFrom">was derived from</span>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/seas/#Property">property</span>
+               <span class="dotted" title="https://w3id.org/opm#Property">property</span>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -554,7 +549,6 @@ This relation can be inferred, as long as the connection to the geometry object 
             <dt>has super-properties</dt>
             <dd>
                <span class="dotted" title="http://www.w3.org/ns/prov#wasDerivedFrom">was derived from</span>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
             <dd>
@@ -607,6 +601,21 @@ This relation can be inferred, as long as the connection to the geometry object 
             <span>domain includes</span>
          </a>
       </li>
+      <li>
+         <a href="#http://xmlns.com/foaf/0.1/name" title="http://xmlns.com/foaf/0.1/name">
+            <span>name</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/ns/prov#wasDerivedFrom" title="http://www.w3.org/ns/prov#wasDerivedFrom">
+            <span>was derived from</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/ns/prov#wasInfluencedBy" title="http://www.w3.org/ns/prov#wasInfluencedBy">
+            <span>was influenced by</span>
+         </a>
+      </li>
    </ul>
    <div class="entity" id="http://schema.org/domainIncludes">
       <h3>domain includes<sup class="type-ap" title="annotation property">ap</sup>
@@ -615,6 +624,48 @@ This relation can be inferred, as long as the connection to the geometry object 
       </h3>
       <p>
          <strong>IRI:</strong> http://schema.org/domainIncludes</p>
+   </div>
+   <div class="entity" id="http://xmlns.com/foaf/0.1/name">
+      <h3>name<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://xmlns.com/foaf/0.1/name</p>
+   </div>
+   <div class="entity" id="http://www.w3.org/ns/prov#wasDerivedFrom">
+      <h3>was derived from<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/ns/prov#wasDerivedFrom</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#wasInfluencedBy">was influenced by</span>
+               <sup class="type-ap" title="annotation property">ap</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.w3.org/ns/prov#wasInfluencedBy">
+      <h3>was influenced by<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/ns/prov#wasInfluencedBy</p>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#http://www.w3.org/ns/prov#wasDerivedFrom" title="http://www.w3.org/ns/prov#wasDerivedFrom">was derived from</a>
+               <sup class="type-ap" title="annotation property">ap</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
 </div><div id="legend">
 <h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
