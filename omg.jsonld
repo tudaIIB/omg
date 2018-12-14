@@ -2,7 +2,7 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "foaf:Person",
-    "name" : "Mathias Bonduel"
+    "name" : "Anna Wagner"
   }, {
     "@id" : "_:b1",
     "@type" : "foaf:Person",
@@ -10,23 +10,11 @@
   }, {
     "@id" : "_:b2",
     "@type" : "foaf:Person",
-    "name" : "Anna Wagner"
-  }, {
-    "@id" : "_:b5",
-    "@type" : "foaf:Person"
-  }, {
-    "@id" : "_:b8",
-    "@type" : "foaf:Person"
-  }, {
-    "@id" : "_:b9",
-    "@type" : "foaf:Person"
-  }, {
-    "@id" : "owl:NamedIndividual",
-    "disjointWith" : [ "omg:GeometryState", "omg:Geometry", "omg:Context" ]
+    "name" : "Mathias Bonduel"
   }, {
     "@id" : "https://w3id.org/omg",
     "@type" : "owl:Ontology",
-    "creator" : [ "_:b1", "_:b2", "_:b0" ],
+    "creator" : [ "_:b0", "_:b1", "_:b2" ],
     "description" : {
       "@language" : "en",
       "@value" : "The Ontology for Managing Geometry (OMG) is an ontology for describing geometry descriptions of objects. It provides means to support the application of multiple geometry descriptions of the same object as well as the description of the geometry evolution over time. The OMG is based the concepts introduced in the Ontology for Property Management (OPM) ontology. \r\nThis ontology was created within the research project SCOPE, funded by the German Federal Ministry for Economic Affairs and Energy (BMWi)."
@@ -39,22 +27,6 @@
     "preferredNamespacePrefix" : "omg",
     "preferredNamespaceUri" : "https://w3id.org/omg",
     "versionInfo" : "0.0.0"
-  }, {
-    "@id" : "omg:Context",
-    "@type" : "owl:Class",
-    "comment" : {
-      "@language" : "en",
-      "@value" : "Context of one (or multiple) geometry descriptions. A context can help extracting relevant geometry descriptions by connecting those to a specific shared context. Geometric contexts can be views of planners, planning stages (versions), or individually created contexts."
-    },
-    "label" : [ {
-      "@language" : "en",
-      "@value" : "Geometry context"
-    }, {
-      "@language" : "de",
-      "@value" : "Geometriekontext"
-    } ],
-    "subClassOf" : "owl:Thing",
-    "disjointWith" : [ "omg:Geometry", "owl:NamedIndividual", "omg:GeometryState" ]
   }, {
     "@id" : "omg:CurrentGeometryState",
     "@type" : "owl:Class",
@@ -85,7 +57,23 @@
       "@value" : "Geometrie"
     } ],
     "subClassOf" : "owl:Thing",
-    "disjointWith" : [ "opm:Property", "omg:GeometryState", "omg:Context", "owl:NamedIndividual" ]
+    "disjointWith" : [ "omg:GeometryState", "omg:GeometryContext", "seas:Property" ]
+  }, {
+    "@id" : "omg:GeometryContext",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Context of one (or multiple) geometry descriptions. A context can help extracting relevant geometry descriptions by connecting those to a specific shared context. Geometric contexts can be views of planners, planning stages (versions), or individually created contexts."
+    },
+    "label" : [ {
+      "@language" : "de",
+      "@value" : "Geometriekontext"
+    }, {
+      "@language" : "en",
+      "@value" : "Geometry context"
+    } ],
+    "subClassOf" : "owl:Thing",
+    "disjointWith" : [ "omg:Geometry", "omg:GeometryState" ]
   }, {
     "@id" : "omg:GeometryState",
     "@type" : "owl:Class",
@@ -102,7 +90,7 @@
     } ],
     "seeAlso" : "opm:PropertyState",
     "subClassOf" : "owl:Thing",
-    "disjointWith" : [ "omg:Context", "omg:Geometry", "owl:NamedIndividual", "opm:PropertyState" ]
+    "disjointWith" : [ "omg:Geometry", "opm:PropertyState", "omg:GeometryContext" ]
   }, {
     "@id" : "omg:complementsGeometry",
     "@type" : "owl:ObjectProperty",
@@ -146,20 +134,32 @@
     }
   }, {
     "@id" : "omg:hasComplexGeometryDescription",
-    "@type" : [ "owl:ObjectProperty", "owl:FunctionalProperty" ],
+    "@type" : "owl:ObjectProperty",
     "domainIncludes" : [ "omg:GeometryState", "omg:Geometry" ],
     "comment" : {
       "@language" : "en",
-      "@value" : "Relation between an object, a geometry, or a geometry state and its RDF-based geometry description. This property is functional, thus, if more than one geometry description should be added to an object, the relation omg:hasGeometry to a new individual of the type omg:Geometry should be used for each geometry description. This step is necessary to allow interconnections between the geometry descriptions regarding their derivation or complementation for easier upkeep of data integrity."
+      "@value" : "Relation between an object, a geometry, or a geometry state and its RDF-based geometry description. If more than one geometry description should be added to an object, the relation omg:hasGeometry to a new individual of the type omg:Geometry should be used for each geometry description. This step is necessary to allow interconnections between the geometry descriptions regarding their derivation or complementation for easier upkeep of data integrity. The introduction of subproperties of this property for specific geometry descriptions (e.g. OntoBREP, GEOM, OntoSTEP) may ease querying for wanted geometry description formats."
     },
     "label" : {
       "@language" : "en",
       "@value" : "has complex geometry description"
     }
   }, {
-    "@id" : "omg:hasContext",
+    "@id" : "omg:hasGeometry",
+    "@type" : [ "owl:InverseFunctionalProperty", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Relation between any object and its geometric representation. An object may have multiple geometric representations, while one geometric represenation may always just be connected to one object (inverse functional)."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "has geometry"
+    },
+    "range" : "omg:Geometry"
+  }, {
+    "@id" : "omg:hasGeometryContext",
     "@type" : "owl:ObjectProperty",
-    "domainIncludes" : [ "omg:GeometryState", "omg:Geometry" ],
+    "domainIncludes" : [ "omg:Geometry", "omg:GeometryState" ],
     "comment" : {
       "@language" : "en",
       "@value" : "Relation between a geometry or geometry state and its geometric context. A singular geometry may have multiple contexts, just as one context can be used for different geometries (of different objects)"
@@ -168,19 +168,7 @@
       "@language" : "en",
       "@value" : "has geometry context"
     },
-    "range" : "omg:Context"
-  }, {
-    "@id" : "omg:hasGeometry",
-    "@type" : "owl:ObjectProperty",
-    "comment" : {
-      "@language" : "en",
-      "@value" : "Relation between any object and its geometric representation. An object may have multiple geometric representations. \r\nThe introduction of subproperties of this property for specific geometry descriptions (e.g. OBJ, GEOM, glTF) may ease querying for wanted geometry description formats."
-    },
-    "label" : {
-      "@language" : "en",
-      "@value" : "has geometry"
-    },
-    "range" : "omg:Geometry"
+    "range" : "omg:GeometryContext"
   }, {
     "@id" : "omg:hasGeometryState",
     "@type" : [ "owl:ObjectProperty", "owl:InverseFunctionalProperty" ],
@@ -249,7 +237,8 @@
       "@language" : "en",
       "@value" : "is derived from geometry state"
     },
-    "range" : "omg:GeometryState"
+    "range" : "omg:GeometryState",
+    "subPropertyOf" : "prov:wasDerivedFrom"
   }, {
     "@id" : "omg:isExplicitlyDerivedFrom",
     "@type" : "owl:ObjectProperty",
@@ -257,12 +246,12 @@
       "@language" : "en",
       "@value" : "Relation between two properties, where the first property is explicitly derived from the other. This means that the first property will always have the same value as the second. Cases where this relation can be used are if an object's geometry is modelled RDF-based and contains a property defining e.g. the height of the object. Then the non-geometric property for height should be explicitly derived from the geometric property to ensure data integrity."
     },
-    "domain" : "opm:Property",
+    "domain" : "seas:Property",
     "label" : {
       "@language" : "en",
       "@value" : "is explicitly derived from"
     },
-    "range" : "opm:Property",
+    "range" : "seas:Property",
     "subPropertyOf" : "prov:wasDerivedFrom"
   }, {
     "@id" : "omg:isImplicitlyDerivedFrom",
@@ -271,7 +260,7 @@
       "@language" : "en",
       "@value" : "Relation between a property and a geometry, where the property is implicitly derived from the geometry (e.g. properties for volumes or areas). This relation can be used to find inconsistencies, e.g. if the property has been changed while the geometry has not and vice versa."
     },
-    "domain" : "opm:Property",
+    "domain" : "seas:Property",
     "label" : {
       "@language" : "en",
       "@value" : "is implicitly derived from"
@@ -290,31 +279,19 @@
       "@language" : "en",
       "@value" : "transforms geometry"
     },
-    "range" : "omg:Geometry"
+    "range" : "omg:Geometry",
+    "subPropertyOf" : "prov:wasDerivedFrom"
   } ],
   "@context" : {
-    "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
-    },
-    "label" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
-    },
-    "comment" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
-    },
-    "domainIncludes" : {
-      "@id" : "http://schema.org/domainIncludes",
-      "@type" : "@id"
-    },
     "title" : {
       "@id" : "http://purl.org/dc/terms/title"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description"
     },
     "creator" : {
       "@id" : "http://purl.org/dc/terms/creator",
       "@type" : "@id"
-    },
-    "description" : {
-      "@id" : "http://purl.org/dc/terms/description"
     },
     "preferredNamespacePrefix" : {
       "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix"
@@ -330,16 +307,22 @@
       "@id" : "http://purl.org/dc/terms/issued",
       "@type" : "http://www.w3.org/2001/XMLSchema#date"
     },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "disjointWith" : {
+      "@id" : "http://www.w3.org/2002/07/owl#disjointWith",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
     "subClassOf" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "range" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#range",
-      "@type" : "@id"
-    },
-    "domain" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#domain",
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
       "@type" : "@id"
     },
     "rest" : {
@@ -350,21 +333,28 @@
       "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
       "@type" : "@id"
     },
-    "disjointWith" : {
-      "@id" : "http://www.w3.org/2002/07/owl#disjointWith",
-      "@type" : "@id"
-    },
     "subPropertyOf" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
       "@type" : "@id"
     },
-    "seeAlso" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+    "range" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#range",
+      "@type" : "@id"
+    },
+    "domain" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#domain",
       "@type" : "@id"
     },
     "propertyChainAxiom" : {
       "@id" : "http://www.w3.org/2002/07/owl#propertyChainAxiom",
       "@type" : "@id"
+    },
+    "domainIncludes" : {
+      "@id" : "http://schema.org/domainIncludes",
+      "@type" : "@id"
+    },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
     },
     "schema" : "http://schema.org/",
     "owl" : "http://www.w3.org/2002/07/owl#",
