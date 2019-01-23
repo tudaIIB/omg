@@ -19,7 +19,8 @@ For contributions to the OMG ontology, please use the [GitHub repository](https:
 
 ## References
 [Presentation for the W3C Linked Building Data Community Group, 11.12.2018](https://drive.google.com/open?id=12Rvab7-GBY3xQOffpJ9uKprisEPeMdPn)
-An [online sparql-visualizer demo](https://madsholten.github.io/sparql-visualizer/?file=https: \%2F\%2Fwww.dropbox.com\%2Fs\%2Fg1c9oclaxv1l8ud\%2Fomg-demo.json) is available, containing sample Abox triples and example queries. The RDF literals in the Abox triples are dummies to make it more easily to visualize them as a graph. 
+
+An [online sparql-visualizer demo](https://madsholten.github.io/sparql-visualizer/?file=https:\%2F\%2Fwww.dropbox.com\%2Fs\%2Fg1c9oclaxv1l8ud\%2Fomg-demo.json) is available, containing sample Abox triples and example queries. The RDF literals in the Abox triples are dummies to make it more easily to visualize them as a graph. 
 
 ## Authors
 Anna Wagner (wagner@iib.tu-darmstadt.de)
