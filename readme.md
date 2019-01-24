@@ -13,9 +13,9 @@ The most recent version of OMG is always available in this GitLab/GitHub reposit
 
 ## Contributing to OMG
 
-The OMG ontology should be as static as possible. Software and use case specific extensions should be realised using the File Ontology for Geometry formats (FOG), which can be found on [GitHub](https://github.com/mathib/fog-ontology).
+The OMG ontology should be as static as possible. Software and use case specific extensions should be realised using the [File Ontology for Geometry formats (FOG)](https://github.com/mathib/fog-ontology), which can be found on GitHub.
 
-For contributions to the OMG ontology, please use the [GitHub repository](https://github.com/tudaIIB/omg) (Mirror of the GitLab repository).
+For contributions to the OMG ontology, please use the [GitHub repository](https://github.com/tudaIIB/omg) (Mirror of the [GitLab repository](https://gitlab.iib.tu-darmstadt.de/Wagner/omg)).
 
 ## References
 [Presentation for the W3C Linked Building Data Community Group, 11.12.2018](https://drive.google.com/open?id=12Rvab7-GBY3xQOffpJ9uKprisEPeMdPn)
