@@ -23,6 +23,8 @@ For contributions to the OMG ontology, please use the [GitHub repository](https:
 An [online sparql-visualizer demo](https://madsholten.github.io/sparql-visualizer/?file=https:\%2F\%2Fwww.dropbox.com\%2Fs\%2Fg1c9oclaxv1l8ud\%2Fomg-demo.json) is available, containing sample Abox triples and example queries. The RDF literals in the Abox triples are dummies to make it more easily to visualize them as a graph. 
 
 ## Authors
-Anna Wagner (wagner@iib.tu-darmstadt.de)
-Mathias Bonduel (mathias.bonduel@kuleuven.be)
-Pieter Pauwels (pipauwel.Pauwels@UGent.be)
+[Anna Wagner](https://github.com/AnnaWagner) - TU Darmstadt
+
+[Mathias Bonduel](https://github.com/mathib) - KU Leuven
+
+[Pieter Pauwels](https://github.com/pipauwel) - UGent
