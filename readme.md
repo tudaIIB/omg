@@ -1,30 +1,34 @@
-# Ontology for Managing Geometry (OMG)
+About Widoco output
+===================
+The purpose of Widoco is to reuse and integrate existing tools for documentation, plus the set of features listed below:
+* Separation of the sections of your html page so you can write them independently and replace only those needed.
+* Automatic annotation in RDF-a of the html produced.
+* Association of a provenance page which includes the history of your vocabulary (W3C PROV-O compliant).
+* Metadata extraction from the ontology plus the means to complete it on the fly when generating your ontology.
+* Guidelines on the main sections that your document should have and how to complete them.
 
-## HTML documentation and raw ontology per serialisation
+Widoco will create 3 different folders:
+|
+|-provenance (a folder including an html and RDF serialization of how the documentation page was created)
+|-resources (folder with the different resources)
+|-sections (folder with the different sections of the documentation, separated for easy editing. Just edit one and the main page will be updated)
 
-* base URI: [https://w3id.org/omg#](http://linkedbuildingdata.net/OMG/#)
-* Canonical URI for the HTML representation: [https://w3id.org/omg.html](http://linkedbuildingdata.net/OMG/#)
-* Canonical URI for the Turtle representation: [https://w3id.org/omg.ttl](http://linkedbuildingdata.net/OMG/omg.ttl)
-* Canonical URI for the n-triples representation: [https://w3id.org/omg.nt](http://linkedbuildingdata.net/OMG/omg.nt)
-* Canonical URI for the JSON-LD representation: [https://w3id.org/omg.jsonld](http://linkedbuildingdata.net/OMG/omg.jsonld)
-* Canonical URI for the RDF/XML representation: [https://w3id.org/omg.rdf](http://linkedbuildingdata.net/OMG/omg.rdf)
+Completing ontology metadata.
+===================
+Widoco uses the ontology metadata to update a configuration file. If you complete that configuration file (ended up widoco.conf), the tool will enhance your html with additional details, such as how to cite the document, previous revisions, icons with the licence, etc.
 
-The most recent version of OMG is always available in this GitLab/GitHub repository
+Browser issues
+==========
+The result of executing Widoco is an html file. We have tested it in Mozilla, IE and Chrome, and when the page is stored in a server all the browsers work correctly. If you view the file locally, we recommend you to use Mozilla Firefox (or Internet Explorer, if you must). Google Chrome will not show the contents correctly, as it doesn't allow  XMLHttpRequest without HTTP. If you want to view the page locally with Google Chrome you have two possibilities:
 
-## Contributing to OMG
+a) Place the file in a server and access it via its URL (for example, put it in dropbox and access through its public url).
 
-The OMG ontology should be as static as possible. Software and use case specific extensions should be realised using the [File Ontology for Geometry formats (FOG)](https://github.com/mathib/fog-ontology), which can be found on GitHub.
+b) Execute Chrome with the following commands :
 
-For contributions to the OMG ontology, please use the [GitHub repository](https://github.com/tudaIIB/omg) (Mirror of the [GitLab repository](https://gitlab.iib.tu-darmstadt.de/Wagner/omg)).
+(WIN) chrome.exe --allow-file-access-from-files,
 
-## References
-[Presentation for the W3C Linked Building Data Community Group, 11.12.2018](https://drive.google.com/open?id=12Rvab7-GBY3xQOffpJ9uKprisEPeMdPn)
+(OSX) open /Applications/Google\ Chrome.app/ --args --allow-file-access-from-files
 
-An [online sparql-visualizer demo](https://madsholten.github.io/sparql-visualizer/?file=https:\%2F\%2Fwww.dropbox.com\%2Fs\%2Fg1c9oclaxv1l8ud\%2Fomg-demo.json) is available, containing sample Abox triples and example queries. The RDF literals in the Abox triples are dummies to make it more easily to visualize them as a graph. 
+(UNX) /usr/bin/google-chrome --allow-file-access-from-files
 
-## Authors
-[Anna Wagner](https://github.com/AnnaWagner) - TU Darmstadt
-
-[Mathias Bonduel](https://github.com/mathib) - KU Leuven
-
-[Pieter Pauwels](https://github.com/pipauwel) - UGent
+Do you have a problem? open an issue at https://github.com/dgarijo/Widoco

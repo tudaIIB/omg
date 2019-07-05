@@ -1,6 +1,15 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-<..\index-en.html> a prov:Entity;
+<http://w3id.org/omg/0.0.1> a prov:Entity;
+	 dc:title "OMG: Ontology for Managing Geometry";
+	 prov:wasAttributedTo <https://www.researchgate.net/profile/Anna_Wagner13>;
+	 dc:creator <https://www.researchgate.net/profile/Anna_Wagner13>;
+	 prov:wasAttributedTo <https://www.researchgate.net/profile/Mathias_Bonduel>;
+	 dc:creator <https://www.researchgate.net/profile/Mathias_Bonduel>;
+	 prov:wasAttributedTo <https://www.ugent.be/ea/architectuur/en/contact/staff-members/pieter-pauwels>;
+	 dc:creator <https://www.ugent.be/ea/architectuur/en/contact/staff-members/pieter-pauwels>;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:specializationOf <http://w3id.org/omg>;
+	 prov:wasGeneratedAt "28.11.2018";
 .

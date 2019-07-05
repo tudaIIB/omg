@@ -1,6 +1,61 @@
 <html>
-<h2 id="desc" class="list">: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<h2 id="desc" class="list">Ontology for Managing Geometry (OMG): Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
-This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
-
+Following, the functionalities of the ontology are explained in more detail, beginning with the three levels of OMG. Subsequently, the possibilities to describe dependencies to non-geometric properties using terms of OMG and OPM are demonstrated.</span>
+<div id="L1">
+<h3 id="level1" class="list">OMG Level 1</h3>
+<p>Level 1 of the OMG consists of one object and one datatype property to establish connections between things and their (RDF-based or non-RDF-based) geometry descriptions.</p>
+<div align="center">	
+<img src="level1.png" alt="Level 1 of OMG" style="width:400px;">
+    <figcaption>Properties from level 1 of OMG</figcaption>
+</div>
+<div id="L2">
+<h3 id="level2" class="list">OMG Level 2</h3>
+<p>Level 2 of the OMG introduces two classes, one for reification of geometry descriptions and one to group geometry descriptions of the same context. For attaching the geometry description to the geometry node, the same properties of level 1 are to be used. A geometry context can be applied to simplify the extraction of multiple geometry descriptions (from different things) that share the same context, e.g. all geometry descriptions that are relevant for a daylight simulation.</p>
+<div align="center">	
+<img src="level2-classes.png" alt="Classes from level 2 of OMG" style="width:400px;">
+    <figcaption>Classes from level 2 of OMG</figcaption>
+</div>
+<p>Additionally, properties for referencing the geometry status (see above) and defining semantically meaningful relations between geometry descriptions exist. Three different relations are currently considered:
+<ul style="list-style-type:none;">
+  <li><b>derivation: </b>	Defines that the domain geometry is or can be derived from the range geometry. If such a relation is bi-directional, the property must be added twice, once for every direction.</li>
+  <li><b>transformation: </b>	Enables the definition of transformed geometries where the domain only contains a transformation matrix/function while the geometry description itself is held by the range geometry.</li>
+  <li><b>complementation: </b>	In cases of geometric details (e.g. decor of a column), a complementary geometry may not suffice by itself but could be used in combination with other geometries. </li>
+</ul>
+<div align="center">	
+<img src="level2-props.png" alt="Properties from level 2 of OMG" style="width:400px;">
+    <figcaption>Properties from level 2 of OMG</figcaption>
+</div>
+</div>
+<div id="L3">
+<h3 id="level3" class="list">OMG Level 3</h3>
+<p>Level 3 of the OMG introduces one class for capturing geometry states of evolving geometry descriptions and four object properties to connect geometry states to geometries, relevant properties of RDF-based geometry descriptions and derived geometry states. For attaching a geometry state to a geometry, the following architecture may be used.</p>
+<div align="center">	
+<img src="level3-classes.png" alt="Classes from level 3 of OMG" style="width:400px;">
+    <figcaption>Classes from level 3 of OMG</figcaption>
+</div>
+<p>To identify all property states (see <a href="https://w3c-lbd-cg.github.io/opm/#PropertyState">OPM Property State</a>) that are contained in a geometry state of an RDF-based geometry description, all objects of the geometry descriptions should be linked to the geometry state, which enables reasoners to infer all current property states. Alternatively, relevant property states can be linked individually.
+<div align="center">	
+<img src="level3-propertyState.png" alt="Connecting geometry states to property states" style="width:400px;">
+    <figcaption>Connecting geometry states to property states</figcaption>
+</div>
+<p>Finally, a geometry state can be linked to the specific geometry state (from different geometry descriptions/nodes) it was derived from. In combination with the OMG level 2 property for defining (potential) derivations between geometries, queries for finding outdated geometry states and options to derive a new state of that geometry can be executed.
+<div align="center">	
+<img src="level3-derivation.png" alt="Connecting derived geometries and geometry states" style="width:400px;">
+    <figcaption>Connecting derived geometries and geometry states</figcaption>
+</div>
+</div>
+<div id="deriv">
+<h3 id="derivatives" class="list">Defining dependencies to non-geometric properties</h3>
+<p>When talking about dependencies to non-geometric properties, a differentiation between <i>implicitly</i> and <i>explicitly</i> dependent properties must be made. Implicitly derivable properties are such that can be calculated from a geometry description, while explicitly derivable properties occur naturally within a (RDF-based) geometry description. For defining implicitly derivable properties as such, an object property to link between a <a href="https://ci.mines-stetienne.fr/seas/FeatureOfInterestOntology-1.0#Property">SEAS property</a> and a reified geometry description can be used.</p>
+<div align="center">	
+<img src="implicitProperty.png" alt="Connecting an implicitly derivable property" style="width:400px;">
+    <figcaption>Connecting an implicitly derivable property</figcaption>
+</div>
+<p>On the other hand, explicitly derivable properties can only occur for RDF-based geometry descriptions, since non-RDF-based descriptions cannot be interpreted within the RDF and need processing, making them implicitly derivable. For linking an explicitly derivable property to its counter-part of the RDF-based geometry description, two object properties are introduced. The one object property links both, the geometric and non-geometric, properties together, while the other infers the relation from the non-geometric property to the most current property state of the geometric property.
+<div align="center">	
+<img src="explicitProperty.png" alt="Connecting an explicitly derivable property" style="width:400px;">
+    <figcaption>Connecting an explicitly derivable property</figcaption>
+</div>
+</div>
 </html>
