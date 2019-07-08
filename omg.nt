@@ -1,138 +1,143 @@
 # baseURI: https://w3id.org/omg
 # prefix: omg
 
-<https://w3id.org/omg> <http://purl.org/dc/terms/title> "OMG: Ontology for Managing Geometry"@en .
-<https://w3id.org/omg> <http://purl.org/dc/terms/description> "The Ontology for Managing Geometry (OMG) is an ontology for describing geometry descriptions of objects. It provides means to support the application of multiple geometry descriptions of the same object as well as the description of the geometry evolution over time. The OMG is based the concepts introduced in the Ontology for Property Management (OPM) ontology. \r\nThis ontology was created within the research project SCOPE, funded by the German Federal Ministry for Economic Affairs and Energy (BMWi)."@en .
-<https://w3id.org/omg> <http://purl.org/dc/terms/creator> _:Bc390dff9f954695046fe1bc68a6fda1c .
-<https://w3id.org/omg> <http://purl.org/dc/terms/creator> _:B98a86d958878c76f90c762cc0b6d651a .
-<https://w3id.org/omg> <http://purl.org/vocab/vann/preferredNamespacePrefix> "omg" .
-<https://w3id.org/omg> <http://purl.org/dc/terms/creator> _:Ba541692ece429d061adb575714ff192c .
-<https://w3id.org/omg> <http://purl.org/vocab/vann/preferredNamespaceUri> <https://w3id.org/omg> .
-<https://w3id.org/omg> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/omg> <http://www.w3.org/2002/07/owl#versionInfo> "0.0.0" .
-<https://w3id.org/omg> <http://purl.org/dc/terms/issued> "2018-11-28"^^<http://www.w3.org/2001/XMLSchema#date> .
-<https://w3id.org/omg#GeometryState> <http://www.w3.org/2000/01/rdf-schema#comment> "A geometry state is an evaluation holding the geometry description and metadata about a geometry that was true for the given time. \r\nIn case of geometry states, changing geometric properties does not cause the need for a new geometry state as long as the property was changed using the OPM concepts. If this is not the case, a copy of the now valid graph must be created and attached to a new geometry state. If an object within the geometry graph is changed (e.g. changing the primitive \"Box\" into a primitive \"Sphere\"), the old primitive (\"Box\") should be classified as opm:Deleted and the new primitive (\"Sphere\") should be added to the geometry graph in the correct place. The new geometry state should then be connected to any object of the geometry graph that is not opm:Deleted using the omg:containsGeometryObject relation.\r\nMetadata of a geometry state must as a minimum be the time of generation stated by prov:generatedAtTime, but preferably also a prov:wasAttributedTo reference to the agent who created the state. In case properties are changed using the OPM concepts, the most current time of generation and agent who created the state will be determined using the omg:containsPropertyState relation.\r\nDerived geometry descriptions are also stored as states as these change when the base geometry changes."@en .
-<https://w3id.org/omg#GeometryState> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/omg#Geometry> .
-<https://w3id.org/omg#GeometryState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/omg#GeometryState> <http://www.w3.org/2000/01/rdf-schema#label> "Geometry state"@en .
-<https://w3id.org/omg#GeometryState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<https://w3id.org/omg#GeometryState> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/opm#PropertyState> .
-<https://w3id.org/omg#GeometryState> <http://www.w3.org/2000/01/rdf-schema#label> "Geometriestatus"@de .
-<https://w3id.org/omg#GeometryState> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/omg#GeometryContext> .
-<https://w3id.org/omg#GeometryState> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://w3id.org/opm#PropertyState> .
-_:Bfc364028X2D5924X2D465bX2Dbaf1X2D757c0b62d5aa <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:Bfc364028X2D5924X2D465bX2Dbaf1X2D757c0b62d5aa <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/opm#hasPropertyState> .
-_:Bddf3898aX2D6c4eX2D4d2bX2Db106X2Db78085237840 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Bfc364028X2D5924X2D465bX2Dbaf1X2D757c0b62d5aa .
-_:Bddf3898aX2D6c4eX2D4d2bX2Db106X2Db78085237840 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/seas/hasProperty> .
-<https://w3id.org/omg#isDerivedFromGeometry> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#wasDerivedFrom> .
-<https://w3id.org/omg#isDerivedFromGeometry> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/omg#Geometry> .
-<https://w3id.org/omg#isDerivedFromGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "is derived from geometry"@en .
-<https://w3id.org/omg#isDerivedFromGeometry> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/omg#Geometry> .
-<https://w3id.org/omg#isDerivedFromGeometry> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between two geometry descriptions where the first geometry can be derived from the second. It is possible for a geometry to be derived from multiple sources, as well as to model a bi-directional derivation between two geometries by using this relation."@en .
-<https://w3id.org/omg#isDerivedFromGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/omg#containsPropertyState> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:B3858dac5X2D93e5X2D4afcX2Db767X2Da5fd3017abd1 .
-<https://w3id.org/omg#containsPropertyState> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/opm#PropertyState> .
-<https://w3id.org/omg#containsPropertyState> <http://www.w3.org/2000/01/rdf-schema#label> "contains property state"@en .
-<https://w3id.org/omg#containsPropertyState> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/omg#GeometryState> .
-<https://w3id.org/omg#containsPropertyState> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a geometry state and a relevant property state. Any property that belongs to the geometry state's related geometry objects (using the omg:containsGeometryObject relation) can be a host for relevant property states. \r\nThis relation can be inferred, as long as the connection to the geometry object (omg:containsGeometryObject), its properties (seas:hasProperty) and the considered property state (opm:hasPropertyState) are modelled correctly."@en .
-<https://w3id.org/omg#containsPropertyState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/omg#transformsGeometry> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#wasDerivedFrom> .
-<https://w3id.org/omg#transformsGeometry> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/omg#Geometry> .
-<https://w3id.org/omg#transformsGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "transforms geometry"@en .
-<https://w3id.org/omg#transformsGeometry> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/omg#Geometry> .
-<https://w3id.org/omg#transformsGeometry> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between one geometry and another one, where the first is a transformation of the second. This might be used when placing multiple objects of the same type and geometry within the same graph (e.g. multiple chairs into a building model). The first geometry will only consist of a transformation or tanslation matrix."@en .
-<https://w3id.org/omg#transformsGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/omg#isImplicitlyDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/seas/#Property> .
-<https://w3id.org/omg#isImplicitlyDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/omg#Geometry> .
-<https://w3id.org/omg#isImplicitlyDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#label> "is implicitly derived from"@en .
-<https://w3id.org/omg#isImplicitlyDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#wasDerivedFrom> .
-<https://w3id.org/omg#isImplicitlyDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a property and a geometry, where the property is implicitly derived from the geometry (e.g. properties for volumes or areas). This relation can be used to find inconsistencies, e.g. if the property has been changed while the geometry has not and vice versa."@en .
-<https://w3id.org/omg#isImplicitlyDerivedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-_:B3858dac5X2D93e5X2D4afcX2Db767X2Da5fd3017abd1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Bddf3898aX2D6c4eX2D4d2bX2Db106X2Db78085237840 .
-_:B3858dac5X2D93e5X2D4afcX2Db767X2Da5fd3017abd1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/omg#containsGeometryObject> .
+<https://w3id.org/omg#hasComplexGeometryDescription> <http://www.w3.org/2000/01/rdf-schema#label> "has complex geometry description"@en .
 <https://w3id.org/omg#hasComplexGeometryDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between an object, a geometry, or a geometry state and its RDF-based geometry description. If more than one geometry description should be added to an object, the relation omg:hasGeometry to a new individual of the type omg:Geometry should be used for each geometry description. This step is necessary to allow interconnections between the geometry descriptions regarding their derivation or complementation for easier upkeep of data integrity. The introduction of subproperties of this property for specific geometry descriptions (e.g. OntoBREP, GEOM, OntoSTEP) may ease querying for wanted geometry description formats."@en .
 <https://w3id.org/omg#hasComplexGeometryDescription> <http://schema.org/domainIncludes> <https://w3id.org/omg#GeometryState> .
 <https://w3id.org/omg#hasComplexGeometryDescription> <http://schema.org/domainIncludes> <https://w3id.org/omg#Geometry> .
 <https://w3id.org/omg#hasComplexGeometryDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/omg#hasComplexGeometryDescription> <http://www.w3.org/2000/01/rdf-schema#label> "has complex geometry description"@en .
-_:Bc390dff9f954695046fe1bc68a6fda1c <http://xmlns.com/foaf/0.1/name> "Anna Wagner" .
-_:Bc390dff9f954695046fe1bc68a6fda1c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
-_:B7bfc899cX2Dffa7X2D48e1X2Da53aX2Da5774a7ad9df <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B6c8dcd35X2D19f6X2D46daX2D88a7X2Db013b99bc214 .
-_:B7bfc899cX2Dffa7X2D48e1X2Da53aX2Da5774a7ad9df <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/omg#isExplicitlyDerivedFrom> .
-<https://w3id.org/omg#hasGeometryState> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://w3id.org/opm#hasPropertyState> .
-<https://w3id.org/omg#hasGeometryState> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/omg#GeometryState> .
-<https://w3id.org/omg#hasGeometryState> <http://www.w3.org/2000/01/rdf-schema#label> "has geometry state"@en .
-<https://w3id.org/omg#hasGeometryState> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/omg#Geometry> .
-<https://w3id.org/omg#hasGeometryState> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a geometry and one of its geometry states. For each revision in an RDF-based geometry descriptions where changes were made to the graph nodes and not the properties, a new state must be defined to capture the new graph. This property is inverse functional as one geometry state can only belong to one geometry."@en .
-<https://w3id.org/omg#hasGeometryState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/omg#hasGeometryState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
-_:B98a86d958878c76f90c762cc0b6d651a <http://xmlns.com/foaf/0.1/name> "Pieter Pauwels" .
-_:B98a86d958878c76f90c762cc0b6d651a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
-<https://w3id.org/omg#complementsGeometry> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/omg#Geometry> .
-<https://w3id.org/omg#complementsGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "complements geometry"@en .
-<https://w3id.org/omg#complementsGeometry> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/omg#Geometry> .
-<https://w3id.org/omg#complementsGeometry> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between one geometry and another that is composed by the first. E.g. a point cloud of a columns laser scan in a high geometric detail complementing a simplified CSG geometry of the same column. Both geometry descriptions are closely related, but not directly derived from each other. The complementing geometry description may also just depict a small part of the entire geometry (e.g. the column header)."@en .
-<https://w3id.org/omg#complementsGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/omg#GeometryContext> <http://www.w3.org/2000/01/rdf-schema#comment> "Context of one (or multiple) geometry descriptions. A context can help extracting relevant geometry descriptions by connecting those to a specific shared context. Geometric contexts can be views of planners, planning stages (versions), or individually created contexts."@en .
-<https://w3id.org/omg#GeometryContext> <http://www.w3.org/2000/01/rdf-schema#label> "Geometriekontext"@de .
-<https://w3id.org/omg#GeometryContext> <http://www.w3.org/2000/01/rdf-schema#label> "Geometry context"@en .
-<https://w3id.org/omg#GeometryContext> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<https://w3id.org/omg#GeometryContext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/omg#GeometryContext> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/omg#Geometry> .
-<https://w3id.org/omg#GeometryContext> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/omg#GeometryState> .
-<https://w3id.org/omg#hasSimpleGeometryDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "Datatype property to connect a simple (non RDF-based), text-based or file-based geometry description to an object, geometry or geometry state. In case the geometry description is text-based or in a binary file format, it can be directly added to this property, if it is a file-based geometry description, the URI linking to the file should be added to this property. Should multiple geometries be added to the object, the omg:Geometry class with its relation (omg:hasGeometry) or even geometry states (omg:GeometryState and omg:hasGeometryState) should be introduced for each geometry resp. geometry version."@en .
-<https://w3id.org/omg#hasSimpleGeometryDescription> <http://www.w3.org/2000/01/rdf-schema#label> "has simple geometry description"@en .
-<https://w3id.org/omg#hasSimpleGeometryDescription> <http://schema.org/domainIncludes> <https://w3id.org/omg#GeometryState> .
-<https://w3id.org/omg#hasSimpleGeometryDescription> <http://schema.org/domainIncludes> <https://w3id.org/omg#Geometry> .
-<https://w3id.org/omg#hasSimpleGeometryDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/omg#hasInferredPropertyState> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:B7bfc899cX2Dffa7X2D48e1X2Da53aX2Da5774a7ad9df .
-<https://w3id.org/omg#hasInferredPropertyState> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/opm#hasPropertyState> .
-<https://w3id.org/omg#hasInferredPropertyState> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://w3id.org/opm#hasPropertyState> .
-<https://w3id.org/omg#hasInferredPropertyState> <http://www.w3.org/2000/01/rdf-schema#label> "has inferred property state"@en .
-<https://w3id.org/omg#hasInferredPropertyState> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a property and its property state that has been inferred from the omg:isExplicitlyDerivedFrom relation. This relation will be inferred by the a chain axiom for every property that is derived from another (geometric) property (using omg:isExplicitlyDerivedFrom) which in turn has its own property state connected with the opm:hasPropertyState relation."@en .
-<https://w3id.org/omg#hasInferredPropertyState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-_:Ba541692ece429d061adb575714ff192c <http://xmlns.com/foaf/0.1/name> "Mathias Bonduel" .
-_:Ba541692ece429d061adb575714ff192c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
-<https://w3id.org/omg#isDerivedFromGeometryState> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#wasDerivedFrom> .
-<https://w3id.org/omg#isDerivedFromGeometryState> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/omg#GeometryState> .
-<https://w3id.org/omg#isDerivedFromGeometryState> <http://www.w3.org/2000/01/rdf-schema#label> "is derived from geometry state"@en .
-<https://w3id.org/omg#isDerivedFromGeometryState> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/omg#GeometryState> .
-<https://w3id.org/omg#isDerivedFromGeometryState> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between two geometry states where the first (domain) has been converted from the second (range). A geometry state can only be converted from one other geometry state."@en .
-<https://w3id.org/omg#isDerivedFromGeometryState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/omg#isDerivedFromGeometryState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://w3id.org/omg#Geometry> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/omg#GeometryState> .
-<https://w3id.org/omg#Geometry> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/omg#GeometryContext> .
-<https://w3id.org/omg#Geometry> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/seas/#Property> .
-<https://w3id.org/omg#Geometry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<https://w3id.org/omg#Geometry> <http://www.w3.org/2000/01/rdf-schema#label> "Geometry"@en .
-<https://w3id.org/omg#Geometry> <http://www.w3.org/2000/01/rdf-schema#label> "Geometrie"@de .
-<https://w3id.org/omg#Geometry> <http://www.w3.org/2000/01/rdf-schema#comment> "Abstract node for geometry that should not contain geometry descriptions (neither RDF-based or text-based). This node can be used to attach additional information to the information as author, time of creation, geometry context or dependencies with other geometry descriptions as transformations, complementations or derivations. By creating subclasses of this class for specific types of geometry descriptions (e.g. OBJ, GEOM, glTF), more informational value can be added and used in querying for specific geometry description formats."@en .
-<https://w3id.org/omg#Geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/omg#containsGeometryObject> <http://www.w3.org/2000/01/rdf-schema#label> "contains geometry object"@en .
-<https://w3id.org/omg#containsGeometryObject> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/omg#GeometryState> .
-<https://w3id.org/omg#containsGeometryObject> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a geometry state and any object (node) of the related RDF-based geometry description that is relevant for this specific geometry state (not including deleted objects)."@en .
-<https://w3id.org/omg#containsGeometryObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/omg#isExplicitlyDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/seas/#Property> .
-<https://w3id.org/omg#isExplicitlyDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/seas/#Property> .
-<https://w3id.org/omg#isExplicitlyDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#label> "is explicitly derived from"@en .
-<https://w3id.org/omg#isExplicitlyDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#wasDerivedFrom> .
-<https://w3id.org/omg#isExplicitlyDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between two properties, where the first property is explicitly derived from the other. This means that the first property will always have the same value as the second. Cases where this relation can be used are if an object's geometry is modelled RDF-based and contains a property defining e.g. the height of the object. Then the non-geometric property for height should be explicitly derived from the geometric property to ensure data integrity."@en .
-<https://w3id.org/omg#isExplicitlyDerivedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/omg#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between any object and its geometric representation. An object may have multiple geometric representations, while one geometric represenation may always just be connected to one object (inverse functional)."@en .
-<https://w3id.org/omg#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/omg#Geometry> .
-<https://w3id.org/omg#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "has geometry"@en .
-<https://w3id.org/omg#hasGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
-<https://w3id.org/omg#hasGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-_:B6c8dcd35X2D19f6X2D46daX2D88a7X2Db013b99bc214 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:B6c8dcd35X2D19f6X2D46daX2D88a7X2Db013b99bc214 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/opm#hasPropertyState> .
-<https://w3id.org/omg#hasGeometryContext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/omg#hasGeometryContext> <http://schema.org/domainIncludes> <https://w3id.org/omg#Geometry> .
-<https://w3id.org/omg#hasGeometryContext> <http://schema.org/domainIncludes> <https://w3id.org/omg#GeometryState> .
-<https://w3id.org/omg#hasGeometryContext> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a geometry or geometry state and its geometric context. A singular geometry may have multiple contexts, just as one context can be used for different geometries (of different objects)"@en .
-<https://w3id.org/omg#hasGeometryContext> <http://www.w3.org/2000/01/rdf-schema#label> "has geometry context"@en .
-<https://w3id.org/omg#hasGeometryContext> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/omg#GeometryContext> .
-<https://w3id.org/omg#CurrentGeometryState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/omg#GeometryState> .
+<https://w3id.org/omg> <http://purl.org/dc/terms/title> "OMG: Ontology for Managing Geometry"@en .
+<https://w3id.org/omg> <http://www.w3.org/2002/07/owl#versionInfo> "0.0.1" .
+<https://w3id.org/omg> <http://purl.org/dc/terms/description> "The Ontology for Managing Geometry (OMG) is an ontology for describing geometry descriptions of objects. It provides means to support the application of multiple geometry descriptions of the same object as well as the description of the geometry evolution over time. The OMG is based the concepts introduced in the Ontology for Property Management (OPM) ontology. \r\n\r\nThis ontology was created within the research project SCOPE, funded by the German Federal Ministry for Economic Affairs and Energy (BMWi).\r\n\r\nThe initial version of the ontology (v0.0.1) is documented in:\r\nWagner, Anna, Bonduel, Mathias, Pauwels, Pieter & Rüppel, Uwe(2019). Relating Geometry Descroptions to its Derivatives on the Web. In Proceedings of the European Conference on Computing in Construction (EC3 2019). Chania, Greece."@en .
+<https://w3id.org/omg> <http://purl.org/dc/terms/creator> <https://www.researchgate.net/profile/Pieter_Pauwels> .
+<https://w3id.org/omg> <http://purl.org/dc/terms/creator> <https://www.researchgate.net/profile/Anna_Wagner13> .
+<https://w3id.org/omg> <http://purl.org/vocab/vann/preferredNamespacePrefix> "omg" .
+<https://w3id.org/omg> <http://purl.org/vocab/vann/preferredNamespaceUri> <https://w3id.org/omg> .
+<https://w3id.org/omg> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/omg> <http://purl.org/dc/terms/issued> "2018-11-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/omg> <http://purl.org/dc/terms/creator> <https://www.researchgate.net/profile/Mathias_Bonduel> .
 <https://w3id.org/omg#CurrentGeometryState> <http://www.w3.org/2000/01/rdf-schema#label> "Current geometry state"@en .
 <https://w3id.org/omg#CurrentGeometryState> <http://www.w3.org/2000/01/rdf-schema#label> "Aktueller Geometrie Status"@de .
 <https://w3id.org/omg#CurrentGeometryState> <http://www.w3.org/2000/01/rdf-schema#comment> "A current geometry state classifies the most current - and thereby valid - geometry state. Which state is most current will be defined by the added timestamp using the prov:generatedAtTime relation."@en .
+<https://w3id.org/omg#CurrentGeometryState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/omg#GeometryState> .
 <https://w3id.org/omg#CurrentGeometryState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/omg#isDerivedFromGeometryState> <http://www.w3.org/2000/01/rdf-schema#label> "is derived from geometry state"@en .
+<https://w3id.org/omg#isDerivedFromGeometryState> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between two geometry states where the first (domain) has been converted from the second (range). A geometry state can only be converted from one other geometry state."@en .
+<https://w3id.org/omg#isDerivedFromGeometryState> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/omg#GeometryState> .
+<https://w3id.org/omg#isDerivedFromGeometryState> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/omg#GeometryState> .
+<https://w3id.org/omg#isDerivedFromGeometryState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/omg#isDerivedFromGeometryState> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#wasDerivedFrom> .
+<https://w3id.org/omg#isDerivedFromGeometryState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/seas/hasProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/omg#hasSimpleGeometryDescription> <http://www.w3.org/2000/01/rdf-schema#label> "has simple geometry description"@en .
+<https://w3id.org/omg#hasSimpleGeometryDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "Datatype property to connect a simple (non RDF-based), text-based or file-based geometry description to an object, geometry or geometry state. In case the geometry description is text-based or in a binary file format, it can be directly added to this property, if it is a file-based geometry description, the URI linking to the file should be added to this property. Should multiple geometries be added to the object, the omg:Geometry class with its relation (omg:hasGeometry) or even geometry states (omg:GeometryState and omg:hasGeometryState) should be introduced for each geometry resp. geometry version."@en .
+<https://w3id.org/omg#hasSimpleGeometryDescription> <http://schema.org/domainIncludes> <https://w3id.org/omg#GeometryState> .
+<https://w3id.org/omg#hasSimpleGeometryDescription> <http://schema.org/domainIncludes> <https://w3id.org/omg#Geometry> .
+<https://w3id.org/omg#hasSimpleGeometryDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/omg#isImplicitlyDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#label> "is implicitly derived from"@en .
+<https://w3id.org/omg#isImplicitlyDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a property and a geometry, where the property is implicitly derived from the geometry (e.g. properties for volumes or areas). This relation can be used to find inconsistencies, e.g. if the property has been changed while the geometry has not and vice versa."@en .
+<https://w3id.org/omg#isImplicitlyDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/omg#Geometry> .
+<https://w3id.org/omg#isImplicitlyDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/seas/#Property> .
+<https://w3id.org/omg#isImplicitlyDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#wasDerivedFrom> .
+<https://w3id.org/omg#isImplicitlyDerivedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:BX2D3ffa5641X3A16bd1b025abX3AX2D6b25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:BX2D3ffa5641X3A16bd1b025abX3AX2D6b24 .
+_:BX2D3ffa5641X3A16bd1b025abX3AX2D6b25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/omg#containsGeometryObject> .
+_:BX2D3ffa5641X3A16bd1b025abX3AX2D6b24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:BX2D3ffa5641X3A16bd1b025abX3AX2D6b23 .
+_:BX2D3ffa5641X3A16bd1b025abX3AX2D6b24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/seas/hasProperty> .
+_:B00e538acc935c6c433155d64a8d830bd <http://xmlns.com/foaf/0.1/name> "Mathias Bonduel" .
+_:B00e538acc935c6c433155d64a8d830bd <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/omg#GeometryState> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://w3id.org/opm#PropertyState> .
+<https://w3id.org/omg#GeometryState> <http://www.w3.org/2000/01/rdf-schema#label> "Geometry state"@en .
+<https://w3id.org/omg#GeometryState> <http://www.w3.org/2000/01/rdf-schema#label> "Geometriestatus"@de .
+<https://w3id.org/omg#GeometryState> <http://www.w3.org/2000/01/rdf-schema#comment> "A geometry state is an evaluation holding the geometry description and metadata about a geometry that was true for the given time. \r\nIn case of geometry states, changing geometric properties does not cause the need for a new geometry state as long as the property was changed using the OPM concepts. If this is not the case, a copy of the now valid graph must be created and attached to a new geometry state. If an object within the geometry graph is changed (e.g. changing the primitive \"Box\" into a primitive \"Sphere\"), the old primitive (\"Box\") should be classified as opm:Deleted and the new primitive (\"Sphere\") should be added to the geometry graph in the correct place. The new geometry state should then be connected to any object of the geometry graph that is not opm:Deleted using the omg:containsGeometryObject relation.\r\nMetadata of a geometry state must as a minimum be the time of generation stated by prov:generatedAtTime, but preferably also a prov:wasAttributedTo reference to the agent who created the state. In case properties are changed using the OPM concepts, the most current time of generation and agent who created the state will be determined using the omg:containsPropertyState relation.\r\nDerived geometry descriptions are also stored as states as these change when the base geometry changes."@en .
+<https://w3id.org/omg#GeometryState> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/opm#PropertyState> .
+<https://w3id.org/omg#GeometryState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/omg#GeometryState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Bf5a762d7370ff7f9d089999aa8c65a92 <http://xmlns.com/foaf/0.1/name> "Pieter Pauwels" .
+_:Bf5a762d7370ff7f9d089999aa8c65a92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/seas/#Property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/prov#wasDerivedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.org/domainIncludes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+_:Bb82cf616b0939a1f675d98875739a9e8 <http://xmlns.com/foaf/0.1/name> "Anna Wagner" .
+_:Bb82cf616b0939a1f675d98875739a9e8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/opm#PropertyState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/omg#GeometryContext> <http://www.w3.org/2000/01/rdf-schema#label> "Geometry context"@en .
+<https://w3id.org/omg#GeometryContext> <http://www.w3.org/2000/01/rdf-schema#label> "Geometriekontext"@de .
+<https://w3id.org/omg#GeometryContext> <http://www.w3.org/2000/01/rdf-schema#comment> "Context of one (or multiple) geometry descriptions. A context can help extracting relevant geometry descriptions by connecting those to a specific shared context. Geometric contexts can be views of planners, planning stages (versions), or individually created contexts."@en .
+<https://w3id.org/omg#GeometryContext> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/omg#GeometryState> .
+<https://w3id.org/omg#GeometryContext> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/omg#GeometryContext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:BX2D3ffa5641X3A16bd1b025abX3AX2D6b23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:BX2D3ffa5641X3A16bd1b025abX3AX2D6b23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/opm#hasPropertyState> .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/omg#containsPropertyState> <http://www.w3.org/2000/01/rdf-schema#label> "contains property state"@en .
+<https://w3id.org/omg#containsPropertyState> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a geometry state and a relevant property state. Any property that belongs to the geometry state's related geometry objects (using the omg:containsGeometryObject relation) can be a host for relevant property states. \r\nThis relation can be inferred, as long as the connection to the geometry object (omg:containsGeometryObject), its properties (seas:hasProperty) and the considered property state (opm:hasPropertyState) are modelled correctly."@en .
+<https://w3id.org/omg#containsPropertyState> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:BX2D3ffa5641X3A16bd1b025abX3AX2D6b25 .
+<https://w3id.org/omg#containsPropertyState> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/opm#PropertyState> .
+<https://w3id.org/omg#containsPropertyState> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/omg#GeometryState> .
+<https://w3id.org/omg#containsPropertyState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/omg#Geometry> <http://www.w3.org/2000/01/rdf-schema#label> "Geometry"@en .
+<https://w3id.org/omg#Geometry> <http://www.w3.org/2000/01/rdf-schema#label> "Geometrie"@de .
+<https://w3id.org/omg#Geometry> <http://www.w3.org/2000/01/rdf-schema#comment> "Abstract node for geometry that should not contain geometry descriptions (neither RDF-based or text-based). This node can be used to attach additional information to the information as author, time of creation, geometry context or dependencies with other geometry descriptions as transformations, complementations or derivations. By creating subclasses of this class for specific types of geometry descriptions (e.g. OBJ, GEOM, glTF), more informational value can be added and used in querying for specific geometry description formats."@en .
+<https://w3id.org/omg#Geometry> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/seas/#Property> .
+<https://w3id.org/omg#Geometry> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/omg#GeometryState> .
+<https://w3id.org/omg#Geometry> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/omg#GeometryContext> .
+<https://w3id.org/omg#Geometry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/omg#Geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/opm#hasPropertyState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/omg#transformsGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "transforms geometry"@en .
+<https://w3id.org/omg#transformsGeometry> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between one geometry and another one, where the first is a transformation of the second. This might be used when placing multiple objects of the same type and geometry within the same graph (e.g. multiple chairs into a building model). The first geometry will only consist of a transformation or tanslation matrix."@en .
+<https://w3id.org/omg#transformsGeometry> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/omg#Geometry> .
+<https://w3id.org/omg#transformsGeometry> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/omg#Geometry> .
+<https://w3id.org/omg#transformsGeometry> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#wasDerivedFrom> .
+<https://w3id.org/omg#transformsGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/omg#isDerivedFromGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "is derived from geometry"@en .
+<https://w3id.org/omg#isDerivedFromGeometry> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between two geometry descriptions where the first geometry can be derived from the second. It is possible for a geometry to be derived from multiple sources, as well as to model a bi-directional derivation between two geometries by using this relation."@en .
+<https://w3id.org/omg#isDerivedFromGeometry> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/omg#Geometry> .
+<https://w3id.org/omg#isDerivedFromGeometry> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/omg#Geometry> .
+<https://w3id.org/omg#isDerivedFromGeometry> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#wasDerivedFrom> .
+<https://w3id.org/omg#isDerivedFromGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/omg#hasGeometryContext> <http://www.w3.org/2000/01/rdf-schema#label> "has geometry context"@en .
+<https://w3id.org/omg#hasGeometryContext> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a geometry or geometry state and its geometric context. A singular geometry may have multiple contexts, just as one context can be used for different geometries (of different objects)"@en .
+<https://w3id.org/omg#hasGeometryContext> <http://schema.org/domainIncludes> <https://w3id.org/omg#GeometryState> .
+<https://w3id.org/omg#hasGeometryContext> <http://schema.org/domainIncludes> <https://w3id.org/omg#Geometry> .
+<https://w3id.org/omg#hasGeometryContext> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/omg#GeometryContext> .
+<https://w3id.org/omg#hasGeometryContext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/omg#hasInferredPropertyState> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://w3id.org/opm#hasPropertyState> .
+<https://w3id.org/omg#hasInferredPropertyState> <http://www.w3.org/2000/01/rdf-schema#label> "has inferred property state"@en .
+<https://w3id.org/omg#hasInferredPropertyState> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a property and its property state that has been inferred from the omg:isExplicitlyDerivedFrom relation. This relation will be inferred by the a chain axiom for every property that is derived from another (geometric) property (using omg:isExplicitlyDerivedFrom) which in turn has its own property state connected with the opm:hasPropertyState relation."@en .
+<https://w3id.org/omg#hasInferredPropertyState> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:BX2D3ffa5641X3A16bd1b025abX3AX2D6b22 .
+<https://w3id.org/omg#hasInferredPropertyState> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/opm#hasPropertyState> .
+<https://w3id.org/omg#hasInferredPropertyState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/omg#complementsGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "complements geometry"@en .
+<https://w3id.org/omg#complementsGeometry> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between one geometry and another that is composed by the first. E.g. a point cloud of a columns laser scan in a high geometric detail complementing a simplified CSG geometry of the same column. Both geometry descriptions are closely related, but not directly derived from each other. The complementing geometry description may also just depict a small part of the entire geometry (e.g. the column header)."@en .
+<https://w3id.org/omg#complementsGeometry> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/omg#Geometry> .
+<https://w3id.org/omg#complementsGeometry> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/omg#Geometry> .
+<https://w3id.org/omg#complementsGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/omg#isExplicitlyDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#label> "is explicitly derived from"@en .
+<https://w3id.org/omg#isExplicitlyDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between two properties, where the first property is explicitly derived from the other. This means that the first property will always have the same value as the second. Cases where this relation can be used are if an object's geometry is modelled RDF-based and contains a property defining e.g. the height of the object. Then the non-geometric property for height should be explicitly derived from the geometric property to ensure data integrity."@en .
+<https://w3id.org/omg#isExplicitlyDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/seas/#Property> .
+<https://w3id.org/omg#isExplicitlyDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/seas/#Property> .
+<https://w3id.org/omg#isExplicitlyDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#wasDerivedFrom> .
+<https://w3id.org/omg#isExplicitlyDerivedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/omg#containsGeometryObject> <http://www.w3.org/2000/01/rdf-schema#label> "contains geometry object"@en .
+<https://w3id.org/omg#containsGeometryObject> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a geometry state and any object (node) of the related RDF-based geometry description that is relevant for this specific geometry state (not including deleted objects)."@en .
+<https://w3id.org/omg#containsGeometryObject> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/omg#GeometryState> .
+<https://w3id.org/omg#containsGeometryObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:BX2D3ffa5641X3A16bd1b025abX3AX2D6b22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:BX2D3ffa5641X3A16bd1b025abX3AX2D6b21 .
+_:BX2D3ffa5641X3A16bd1b025abX3AX2D6b22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/omg#isExplicitlyDerivedFrom> .
+<https://w3id.org/omg#hasGeometryState> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://w3id.org/opm#hasPropertyState> .
+<https://w3id.org/omg#hasGeometryState> <http://www.w3.org/2000/01/rdf-schema#label> "has geometry state"@en .
+<https://w3id.org/omg#hasGeometryState> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a geometry and one of its geometry states. For each revision in an RDF-based geometry descriptions where changes were made to the graph nodes and not the properties, a new state must be defined to capture the new graph. This property is inverse functional as one geometry state can only belong to one geometry."@en .
+<https://w3id.org/omg#hasGeometryState> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/omg#GeometryState> .
+<https://w3id.org/omg#hasGeometryState> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/omg#Geometry> .
+<https://w3id.org/omg#hasGeometryState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<https://w3id.org/omg#hasGeometryState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:BX2D3ffa5641X3A16bd1b025abX3AX2D6b21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:BX2D3ffa5641X3A16bd1b025abX3AX2D6b21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/opm#hasPropertyState> .
+<https://w3id.org/omg#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "has geometry"@en .
+<https://w3id.org/omg#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between any object and its geometric representation. An object may have multiple geometric representations, while one geometric represenation may always just be connected to one object (inverse functional)."@en .
+<https://w3id.org/omg#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/omg#Geometry> .
+<https://w3id.org/omg#hasGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<https://w3id.org/omg#hasGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .

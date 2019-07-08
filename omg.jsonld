@@ -1,23 +1,35 @@
 {
   "@graph" : [ {
-    "@id" : "_:b0",
-    "@type" : "foaf:Person",
-    "name" : "Anna Wagner"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "foaf:Person",
-    "name" : "Pieter Pauwels"
-  }, {
-    "@id" : "_:b2",
+    "@id" : "_:b3",
     "@type" : "foaf:Person",
     "name" : "Mathias Bonduel"
   }, {
+    "@id" : "_:b4",
+    "@type" : "foaf:Person",
+    "name" : "Pieter Pauwels"
+  }, {
+    "@id" : "_:b5",
+    "@type" : "foaf:Person",
+    "name" : "Anna Wagner"
+  }, {
+    "@id" : "schema:domainIncludes",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "prov:wasDerivedFrom",
+    "@type" : "owl:ObjectProperty"
+  }, {
+    "@id" : "foaf:Person",
+    "@type" : "owl:Class"
+  }, {
+    "@id" : "foaf:name",
+    "@type" : "owl:AnnotationProperty"
+  }, {
     "@id" : "https://w3id.org/omg",
     "@type" : "owl:Ontology",
-    "creator" : [ "_:b0", "_:b1", "_:b2" ],
+    "creator" : [ "https://www.researchgate.net/profile/Pieter_Pauwels", "https://www.researchgate.net/profile/Anna_Wagner13", "https://www.researchgate.net/profile/Mathias_Bonduel" ],
     "description" : {
       "@language" : "en",
-      "@value" : "The Ontology for Managing Geometry (OMG) is an ontology for describing geometry descriptions of objects. It provides means to support the application of multiple geometry descriptions of the same object as well as the description of the geometry evolution over time. The OMG is based the concepts introduced in the Ontology for Property Management (OPM) ontology. \r\nThis ontology was created within the research project SCOPE, funded by the German Federal Ministry for Economic Affairs and Energy (BMWi)."
+      "@value" : "The Ontology for Managing Geometry (OMG) is an ontology for describing geometry descriptions of objects. It provides means to support the application of multiple geometry descriptions of the same object as well as the description of the geometry evolution over time. The OMG is based the concepts introduced in the Ontology for Property Management (OPM) ontology. \r\n\r\nThis ontology was created within the research project SCOPE, funded by the German Federal Ministry for Economic Affairs and Energy (BMWi).\r\n\r\nThe initial version of the ontology (v0.0.1) is documented in:\r\nWagner, Anna, Bonduel, Mathias, Pauwels, Pieter & Rüppel, Uwe(2019). Relating Geometry Descroptions to its Derivatives on the Web. In Proceedings of the European Conference on Computing in Construction (EC3 2019). Chania, Greece."
     },
     "issued" : "2018-11-28",
     "title" : {
@@ -26,7 +38,7 @@
     },
     "preferredNamespacePrefix" : "omg",
     "preferredNamespaceUri" : "https://w3id.org/omg",
-    "versionInfo" : "0.0.0"
+    "versionInfo" : "0.0.1"
   }, {
     "@id" : "omg:CurrentGeometryState",
     "@type" : "owl:Class",
@@ -57,7 +69,7 @@
       "@value" : "Geometrie"
     } ],
     "subClassOf" : "owl:Thing",
-    "disjointWith" : [ "omg:GeometryState", "omg:GeometryContext", "seas:Property" ]
+    "disjointWith" : [ "seas:Property", "omg:GeometryState", "omg:GeometryContext" ]
   }, {
     "@id" : "omg:GeometryContext",
     "@type" : "owl:Class",
@@ -66,14 +78,14 @@
       "@value" : "Context of one (or multiple) geometry descriptions. A context can help extracting relevant geometry descriptions by connecting those to a specific shared context. Geometric contexts can be views of planners, planning stages (versions), or individually created contexts."
     },
     "label" : [ {
-      "@language" : "de",
-      "@value" : "Geometriekontext"
-    }, {
       "@language" : "en",
       "@value" : "Geometry context"
+    }, {
+      "@language" : "de",
+      "@value" : "Geometriekontext"
     } ],
     "subClassOf" : "owl:Thing",
-    "disjointWith" : [ "omg:Geometry", "omg:GeometryState" ]
+    "disjointWith" : "omg:GeometryState"
   }, {
     "@id" : "omg:GeometryState",
     "@type" : "owl:Class",
@@ -90,7 +102,7 @@
     } ],
     "seeAlso" : "opm:PropertyState",
     "subClassOf" : "owl:Thing",
-    "disjointWith" : [ "omg:Geometry", "opm:PropertyState", "omg:GeometryContext" ]
+    "disjointWith" : "opm:PropertyState"
   }, {
     "@id" : "omg:complementsGeometry",
     "@type" : "owl:ObjectProperty",
@@ -159,7 +171,7 @@
   }, {
     "@id" : "omg:hasGeometryContext",
     "@type" : "owl:ObjectProperty",
-    "domainIncludes" : [ "omg:Geometry", "omg:GeometryState" ],
+    "domainIncludes" : [ "omg:GeometryState", "omg:Geometry" ],
     "comment" : {
       "@language" : "en",
       "@value" : "Relation between a geometry or geometry state and its geometric context. A singular geometry may have multiple contexts, just as one context can be used for different geometries (of different objects)"
@@ -171,7 +183,7 @@
     "range" : "omg:GeometryContext"
   }, {
     "@id" : "omg:hasGeometryState",
-    "@type" : [ "owl:ObjectProperty", "owl:InverseFunctionalProperty" ],
+    "@type" : [ "owl:InverseFunctionalProperty", "owl:ObjectProperty" ],
     "comment" : {
       "@language" : "en",
       "@value" : "Relation between a geometry and one of its geometry states. For each revision in an RDF-based geometry descriptions where changes were made to the graph nodes and not the properties, a new state must be defined to capture the new graph. This property is inverse functional as one geometry state can only belong to one geometry."
@@ -227,7 +239,7 @@
     "subPropertyOf" : "prov:wasDerivedFrom"
   }, {
     "@id" : "omg:isDerivedFromGeometryState",
-    "@type" : [ "owl:ObjectProperty", "owl:FunctionalProperty" ],
+    "@type" : [ "owl:FunctionalProperty", "owl:ObjectProperty" ],
     "comment" : {
       "@language" : "en",
       "@value" : "Relation between two geometry states where the first (domain) has been converted from the second (range). A geometry state can only be converted from one other geometry state."
@@ -281,10 +293,35 @@
     },
     "range" : "omg:Geometry",
     "subPropertyOf" : "prov:wasDerivedFrom"
+  }, {
+    "@id" : "opm:PropertyState",
+    "@type" : "owl:Class"
+  }, {
+    "@id" : "opm:hasPropertyState",
+    "@type" : "owl:ObjectProperty"
+  }, {
+    "@id" : "seas:Property",
+    "@type" : "owl:Class"
+  }, {
+    "@id" : "https://w3id.org/seas/hasProperty",
+    "@type" : "owl:ObjectProperty"
   } ],
   "@context" : {
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "domainIncludes" : {
+      "@id" : "http://schema.org/domainIncludes",
+      "@type" : "@id"
+    },
     "title" : {
       "@id" : "http://purl.org/dc/terms/title"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
     },
     "description" : {
       "@id" : "http://purl.org/dc/terms/description"
@@ -300,41 +337,12 @@
       "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
       "@type" : "@id"
     },
-    "versionInfo" : {
-      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
-    },
     "issued" : {
       "@id" : "http://purl.org/dc/terms/issued",
       "@type" : "http://www.w3.org/2001/XMLSchema#date"
     },
-    "comment" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
-    },
-    "disjointWith" : {
-      "@id" : "http://www.w3.org/2002/07/owl#disjointWith",
-      "@type" : "@id"
-    },
-    "label" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
-    },
     "subClassOf" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
-      "@type" : "@id"
-    },
-    "seeAlso" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
-      "@type" : "@id"
-    },
-    "rest" : {
-      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
-      "@type" : "@id"
-    },
-    "first" : {
-      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
-      "@type" : "@id"
-    },
-    "subPropertyOf" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
       "@type" : "@id"
     },
     "range" : {
@@ -345,16 +353,32 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#domain",
       "@type" : "@id"
     },
-    "propertyChainAxiom" : {
-      "@id" : "http://www.w3.org/2002/07/owl#propertyChainAxiom",
+    "subPropertyOf" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
       "@type" : "@id"
     },
-    "domainIncludes" : {
-      "@id" : "http://schema.org/domainIncludes",
+    "rest" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+      "@type" : "@id"
+    },
+    "first" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
       "@type" : "@id"
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "@type" : "@id"
+    },
+    "disjointWith" : {
+      "@id" : "http://www.w3.org/2002/07/owl#disjointWith",
+      "@type" : "@id"
+    },
+    "propertyChainAxiom" : {
+      "@id" : "http://www.w3.org/2002/07/owl#propertyChainAxiom",
+      "@type" : "@id"
     },
     "schema" : "http://schema.org/",
     "owl" : "http://www.w3.org/2002/07/owl#",
@@ -365,6 +389,7 @@
     "opm" : "https://w3id.org/opm#",
     "seas" : "https://w3id.org/seas/#",
     "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "xml" : "http://www.w3.org/XML/1998/namespace",
     "spin" : "http://spinrdf.org/spin#",
     "dcterms" : "http://purl.org/dc/terms/",
     "vann" : "http://purl.org/vocab/vann/",
