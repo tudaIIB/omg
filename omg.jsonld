@@ -1,16 +1,16 @@
 {
   "@graph" : [ {
-    "@id" : "_:b3",
-    "@type" : "foaf:Person",
-    "name" : "Mathias Bonduel"
-  }, {
-    "@id" : "_:b4",
+    "@id" : "_:b0",
     "@type" : "foaf:Person",
     "name" : "Pieter Pauwels"
   }, {
-    "@id" : "_:b5",
+    "@id" : "_:b1",
     "@type" : "foaf:Person",
     "name" : "Anna Wagner"
+  }, {
+    "@id" : "_:b6",
+    "@type" : "foaf:Person",
+    "name" : "Mathias Bonduel"
   }, {
     "@id" : "schema:domainIncludes",
     "@type" : "owl:AnnotationProperty"
@@ -38,7 +38,7 @@
     },
     "preferredNamespacePrefix" : "omg",
     "preferredNamespaceUri" : "https://w3id.org/omg",
-    "versionInfo" : "0.0.1"
+    "versionInfo" : "0.0.2"
   }, {
     "@id" : "omg:CurrentGeometryState",
     "@type" : "owl:Class",
@@ -158,7 +158,7 @@
     }
   }, {
     "@id" : "omg:hasGeometry",
-    "@type" : [ "owl:InverseFunctionalProperty", "owl:ObjectProperty" ],
+    "@type" : [ "owl:ObjectProperty", "owl:InverseFunctionalProperty" ],
     "comment" : {
       "@language" : "en",
       "@value" : "Relation between any object and its geometric representation. An object may have multiple geometric representations, while one geometric represenation may always just be connected to one object (inverse functional)."
@@ -183,7 +183,7 @@
     "range" : "omg:GeometryContext"
   }, {
     "@id" : "omg:hasGeometryState",
-    "@type" : [ "owl:InverseFunctionalProperty", "owl:ObjectProperty" ],
+    "@type" : [ "owl:ObjectProperty", "owl:InverseFunctionalProperty" ],
     "comment" : {
       "@language" : "en",
       "@value" : "Relation between a geometry and one of its geometry states. For each revision in an RDF-based geometry descriptions where changes were made to the graph nodes and not the properties, a new state must be defined to capture the new graph. This property is inverse functional as one geometry state can only belong to one geometry."
@@ -239,7 +239,7 @@
     "subPropertyOf" : "prov:wasDerivedFrom"
   }, {
     "@id" : "omg:isDerivedFromGeometryState",
-    "@type" : [ "owl:FunctionalProperty", "owl:ObjectProperty" ],
+    "@type" : [ "owl:ObjectProperty", "owl:FunctionalProperty" ],
     "comment" : {
       "@language" : "en",
       "@value" : "Relation between two geometry states where the first (domain) has been converted from the second (range). A geometry state can only be converted from one other geometry state."
@@ -276,6 +276,20 @@
     "label" : {
       "@language" : "en",
       "@value" : "is implicitly derived from"
+    },
+    "range" : "omg:Geometry",
+    "subPropertyOf" : "prov:wasDerivedFrom"
+  }, {
+    "@id" : "omg:isPartOfGeometry",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Relation between a referencing geometry and its origin geometry. The origin geometry contains a large geometry description, including the reference geometry's description. The reference geometry contains only its identifier within its origin geometry description."
+    },
+    "domain" : "omg:Geometry",
+    "label" : {
+      "@language" : "en",
+      "@value" : "is part of geometry "
     },
     "range" : "omg:Geometry",
     "subPropertyOf" : "prov:wasDerivedFrom"
@@ -320,11 +334,11 @@
     "title" : {
       "@id" : "http://purl.org/dc/terms/title"
     },
-    "versionInfo" : {
-      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
-    },
     "description" : {
       "@id" : "http://purl.org/dc/terms/description"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
     },
     "creator" : {
       "@id" : "http://purl.org/dc/terms/creator",
@@ -345,6 +359,10 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "subPropertyOf" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+      "@type" : "@id"
+    },
     "range" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#range",
       "@type" : "@id"
@@ -353,9 +371,8 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#domain",
       "@type" : "@id"
     },
-    "subPropertyOf" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
-      "@type" : "@id"
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
     },
     "rest" : {
       "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
@@ -365,21 +382,19 @@
       "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
       "@type" : "@id"
     },
-    "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
+    "disjointWith" : {
+      "@id" : "http://www.w3.org/2002/07/owl#disjointWith",
+      "@type" : "@id"
     },
     "seeAlso" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
-      "@type" : "@id"
-    },
-    "disjointWith" : {
-      "@id" : "http://www.w3.org/2002/07/owl#disjointWith",
       "@type" : "@id"
     },
     "propertyChainAxiom" : {
       "@id" : "http://www.w3.org/2002/07/owl#propertyChainAxiom",
       "@type" : "@id"
     },
+    "@vocab" : "https://w3id.org/omg#",
     "schema" : "http://schema.org/",
     "owl" : "http://www.w3.org/2002/07/owl#",
     "bot" : "https://w3id.org/bot#",

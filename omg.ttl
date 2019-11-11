@@ -45,7 +45,7 @@ Wagner, Anna, Bonduel, Mathias, Pauwels, Pieter & Rüppel, Uwe(2019). Relating G
   dcterms:title "OMG: Ontology for Managing Geometry"@en ;
   vann:preferredNamespacePrefix "omg" ;
   vann:preferredNamespaceUri <https://w3id.org/omg> ;
-  owl:versionInfo "0.0.1" ;
+  owl:versionInfo "0.0.2" ;
 .
 omg:CurrentGeometryState
   rdf:type owl:Class ;
@@ -152,6 +152,12 @@ omg:hasInferredPropertyState
       opm:hasPropertyState
     ) ;
 .
+omg:hasReferencedGeometryId
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Property to add an identifier to a referencing geometry that can be used to identify the referencing geometry in its origin's complete geometry descritpion."@en ;
+  rdfs:domain omg:Geometry ;
+  rdfs:label "has referenced geometry identifier"@en ;
+.
 omg:hasSimpleGeometryDescription
   rdf:type owl:DatatypeProperty ;
   schema:domainIncludes omg:Geometry ;
@@ -189,6 +195,14 @@ omg:isImplicitlyDerivedFrom
   rdfs:comment "Relation between a property and a geometry, where the property is implicitly derived from the geometry (e.g. properties for volumes or areas). This relation can be used to find inconsistencies, e.g. if the property has been changed while the geometry has not and vice versa."@en ;
   rdfs:domain seas:Property ;
   rdfs:label "is implicitly derived from"@en ;
+  rdfs:range omg:Geometry ;
+  rdfs:subPropertyOf prov:wasDerivedFrom ;
+.
+omg:isPartOfGeometry
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Relation between a referencing geometry and its origin geometry. The origin geometry contains a large geometry description, including the reference geometry's description. The reference geometry contains only its identifier within its origin geometry description."@en ;
+  rdfs:domain omg:Geometry ;
+  rdfs:label "is part of geometry "@en ;
   rdfs:range omg:Geometry ;
   rdfs:subPropertyOf prov:wasDerivedFrom ;
 .
