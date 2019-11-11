@@ -193,9 +193,6 @@ Derived geometry descriptions are also stored as states as these change when the
          <a href="#isImplicitlyDerivedFrom" title="https://w3id.org/omg#isImplicitlyDerivedFrom">is implicitly derived from</a>
       </li>
       <li>
-         <a href="#isPartOfGeometry" title="https://w3id.org/omg#isPartOfGeometry">is part of geometry</a>
-      </li>
-      <li>
          <a href="#transformsGeometry" title="https://w3id.org/omg#transformsGeometry">transforms geometry</a>
       </li>
    </ul>
@@ -511,36 +508,6 @@ This relation can be inferred, as long as the connection to the geometry object 
          </dl>
       </div>
    </div>
-   <div class="entity" id="isPartOfGeometry">
-      <h3>is part of geometry<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/omg#isPartOfGeometry</p>
-      <div class="comment">
-         <span class="markdown">Relation between a referencing geometry and its origin geometry. The origin geometry contains a large geometry description, including the reference geometry's description. The reference geometry contains only its identifier within its origin geometry description.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/ns/prov#wasDerivedFrom">was derived from</span>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Geometry" title="https://w3id.org/omg#Geometry">Geometry</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Geometry" title="https://w3id.org/omg#Geometry">Geometry</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
    <div class="entity" id="transformsGeometry">
       <h3>transforms geometry<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -576,35 +543,10 @@ This relation can be inferred, as long as the connection to the geometry object 
    <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
       <li>
-         <a href="#hasReferencedGeometryId"
-            title="https://w3id.org/omg#hasReferencedGeometryId">has referenced geometry identifier</a>
-      </li>
-      <li>
          <a href="#hasSimpleGeometryDescription"
             title="https://w3id.org/omg#hasSimpleGeometryDescription">has simple geometry description</a>
       </li>
-   </ul> 
-   <div class="entity" id="hasReferencedGeometryId">
-      <h3>has referenced geometry identifier<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/omg#hasReferencedGeometryId</p>
-      <div class="comment">
-         <span class="markdown">Property to add an identifier to a referencing geometry that can be used to identify the referencing geometry in its origin's complete geometry descritpion.</span>
-      </div>	  
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Geometry" title="https://w3id.org/omg#Geometry">Geometry</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   </div>
+   </ul>
    <div class="entity" id="hasSimpleGeometryDescription">
       <h3>has simple geometry description<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
