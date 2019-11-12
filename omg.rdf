@@ -18,8 +18,7 @@
   <owl:Ontology rdf:about="">
     <owl:versionInfo>0.3</owl:versionInfo>
     <dcterms:title xml:lang="en">OMG: Ontology for Managing Geometry</dcterms:title>
-    <owl:versionIRI rdf:resource="https://w3id.org/omg/archive/0-3"/>
-    <owl:priorVersion rdf:resource="https://w3id.org/omg/archive/0-2"/>
+    <owl:versionIRI rdf:resource="https://w3id.org/omg/0-3"/>
     <dcterms:creator rdf:resource="https://www.researchgate.net/profile/Pieter_Pauwels"/>
     <dcterms:description xml:lang="en">The Ontology for Managing Geometry (OMG) is an ontology for describing geometry descriptions of objects. It provides means to support the application of multiple geometry descriptions of the same object as well as the description of the geometry evolution over time. The OMG is based the concepts introduced in the Ontology for Property Management (OPM) ontology. &#xD;
 &#xD;
@@ -30,6 +29,7 @@ Wagner, Anna, Bonduel, Mathias, Pauwels, Pieter &amp; Rüppel, Uwe(2019). Relati
     <dcterms:creator rdf:resource="https://www.researchgate.net/profile/Anna_Wagner13"/>
     <vann:preferredNamespacePrefix>omg</vann:preferredNamespacePrefix>
     <vann:preferredNamespaceUri rdf:resource=""/>
+    <owl:priorVersion rdf:resource="https://w3id.org/omg/0-2"/>
     <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
     >2018-11-28</dcterms:issued>
     <dcterms:creator rdf:resource="https://www.researchgate.net/profile/Mathias_Bonduel"/>
@@ -192,15 +192,15 @@ This relation can be inferred, as long as the connection to the geometry object 
     <rdfs:domain rdf:resource="#Geometry"/>
     <rdfs:comment xml:lang="en">Property to add an identifier to a referencing geometry that can be used to identify the referencing geometry in its origin's complete geometry descritpion.</rdfs:comment>
   </owl:DatatypeProperty>
-  <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/name"/>
   <foaf:Person>
     <foaf:name>Mathias Bonduel</foaf:name>
   </foaf:Person>
-  <foaf:Person>
-    <foaf:name>Pieter Pauwels</foaf:name>
-  </foaf:Person>
+  <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/name"/>
   <foaf:Person>
     <foaf:name>Anna Wagner</foaf:name>
+  </foaf:Person>
+  <foaf:Person>
+    <foaf:name>Pieter Pauwels</foaf:name>
   </foaf:Person>
   <owl:AnnotationProperty rdf:about="http://schema.org/domainIncludes"/>
 </rdf:RDF>

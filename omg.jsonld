@@ -1,12 +1,12 @@
 {
   "@graph" : [ {
+    "@id" : "_:b1",
+    "@type" : "foaf:Person",
+    "name" : "Pieter Pauwels"
+  }, {
     "@id" : "_:b2",
     "@type" : "foaf:Person",
     "name" : "Mathias Bonduel"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "foaf:Person",
-    "name" : "Pieter Pauwels"
   }, {
     "@id" : "_:b7",
     "@type" : "foaf:Person",
@@ -38,8 +38,8 @@
     },
     "preferredNamespacePrefix" : "omg",
     "preferredNamespaceUri" : "https://w3id.org/omg",
-    "priorVersion" : "https://w3id.org/omg/archive/0-2",
-    "versionIRI" : "https://w3id.org/omg/archive/0-3",
+    "priorVersion" : "https://w3id.org/omg/0-2",
+    "versionIRI" : "https://w3id.org/omg/0-3",
     "versionInfo" : "0.3"
   }, {
     "@id" : "omg:CurrentGeometryState",
@@ -335,6 +335,14 @@
     "@type" : "owl:ObjectProperty"
   } ],
   "@context" : {
+    "rest" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+      "@type" : "@id"
+    },
+    "first" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+      "@type" : "@id"
+    },
     "label" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
     },
@@ -355,10 +363,6 @@
       "@id" : "http://www.w3.org/2002/07/owl#versionIRI",
       "@type" : "@id"
     },
-    "priorVersion" : {
-      "@id" : "http://www.w3.org/2002/07/owl#priorVersion",
-      "@type" : "@id"
-    },
     "creator" : {
       "@id" : "http://purl.org/dc/terms/creator",
       "@type" : "@id"
@@ -371,6 +375,10 @@
     },
     "preferredNamespaceUri" : {
       "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
+      "@type" : "@id"
+    },
+    "priorVersion" : {
+      "@id" : "http://www.w3.org/2002/07/owl#priorVersion",
       "@type" : "@id"
     },
     "issued" : {
@@ -391,14 +399,6 @@
     },
     "domain" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#domain",
-      "@type" : "@id"
-    },
-    "rest" : {
-      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
-      "@type" : "@id"
-    },
-    "first" : {
-      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
       "@type" : "@id"
     },
     "name" : {

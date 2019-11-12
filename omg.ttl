@@ -45,8 +45,8 @@ Wagner, Anna, Bonduel, Mathias, Pauwels, Pieter & Rüppel, Uwe(2019). Relating G
   dcterms:title "OMG: Ontology for Managing Geometry"@en ;
   vann:preferredNamespacePrefix "omg" ;
   vann:preferredNamespaceUri <https://w3id.org/omg> ;
-  owl:priorVersion <https://w3id.org/omg/archive/0-2> ;
-  owl:versionIRI <https://w3id.org/omg/archive/0-3> ;
+  owl:priorVersion <https://w3id.org/omg/0-2> ;
+  owl:versionIRI <https://w3id.org/omg/0-3> ;
   owl:versionInfo "0.3" ;
 .
 omg:CurrentGeometryState
